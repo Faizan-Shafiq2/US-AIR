@@ -81,21 +81,21 @@ const News = ({ blogpost}: { blogpost: PostProps }) => {
             </p>
             <div className="flex gap-4">
               <Image
-                src={"/assets/X_Logo.svg"}
+                src={"/X_logo.svg"}
                 alt="US AIR TECH"
                 width={40}
                 height={100}
                 className="border-[1px] rounded-full p-3"
               />
               <Image
-                src={"/assets/insta_Logo.svg"}
+                src={"/insta_logo.svg"}
                 alt="US AIR TECH"
                 width={40}
                 height={100}
                 className="border-[1px] rounded-full p-3"
               />
               <Image
-                src={"/assets/tiktok_Logo.svg"}
+                src={"/tiktok_logo.svg"}
                 alt="US AIR TECH"
                 width={40}
                 height={100}
