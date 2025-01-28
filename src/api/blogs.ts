@@ -13,6 +13,7 @@ export const blogPost = async (slug: string) => {
   const query = `*[_type == "post" && slug.current == $slug][0] {
   _id,
   title,
+  tag,
   mainImage {
     asset->{url}
       },

@@ -19,6 +19,7 @@
     "lucide-react": "^0.469.0",
     "next": "15.1.3",
     "next-sanity": "^9.8.35",
+    "next-share": "^0.27.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0",

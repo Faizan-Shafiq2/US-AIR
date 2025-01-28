@@ -24,6 +24,11 @@ export const postType = defineType({
       to: {type: 'author'},
     }),
     defineField({
+      name: 'tag',
+      type: 'array',
+      of: [defineArrayMember({type: 'string'})],
+    }),
+    defineField({
       name: 'mainImage',
       type: 'image',
       options: {

@@ -1,15 +1,23 @@
+"use client";
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import PortableTextComponent from "./portable-text";
-import { btnData} from "@/data/card-data";
 import Image from "next/image";
-import Link from "next/link";
 import "swiper/css/bundle";
 import { urlFor } from "@/sanity/lib/image";
 import RelatedPost from "./related-post";
 import { BlogPost } from "@/types/index";
+import {
+  LinkedinIcon,
+  LinkedinShareButton,
+  FacebookIcon,
+  FacebookShareButton,
+  InstagramIcon,
+  InstapaperShareButton,
+} from "next-share";
 
 interface PostProps {
   title: string;
+  tag?: string[];
   body: {
     _type: string;
     children: { text: string }[];
@@ -21,39 +29,47 @@ interface PostProps {
     image: { _ref: string; alt?: string };
   };
   relatedPosts?: BlogPost[];
-  
 }
 
-const News = ({ blogpost}: { blogpost: PostProps }) => {
+const News = ({ blogpost }: { blogpost: PostProps }) => {
   return (
     <article className="article">
       <h1 className="blog-title">{blogpost?.title}</h1>
       <div className="blog">
         <PortableText
           value={blogpost?.body}
-          components={PortableTextComponent as Partial<PortableTextReactComponents>}
+          components={
+            PortableTextComponent as Partial<PortableTextReactComponents>
+          }
         />
         <div>
           <div className="flex md:flex-row flex-col md:justify-between justify-center gap-6">
             <div className=" grid sm:grid-cols-3 grid-cols-2 justify-center md:mx-0 mx-auto md:gap-8 gap-2 text-xs">
-              {btnData?.map((item, index) => (
-                <Link
+              {blogpost?.tag?.map((item, index) => (
+                <div
                   key={index}
-                  href={item.url}
-                  className={`bg-black text-white rounded-full sm:py-3 py-2 md:text-[14px] text-[10px] ${item.class}`}
+                  className={`flex justify-center bg-black text-white rounded-full sm:py-3 py-2 md:px-4 px-2  md:text-[14px] text-[10px]`}
                 >
-                  {item.label}
-                </Link>
+                  {item}
+                </div>
               ))}
             </div>
             <div className="flex items-center justify-center gap-4">
               <h4 className="text-[#c7c7c7] text-md">Share on</h4>
-              <Image
-                src={"/linkedIn_outline.svg"}
-                alt="US AIR TECH"
-                width={40}
-                height={100}
-              />
+              <LinkedinShareButton url={"https://github.com/next-share"}>
+                <LinkedinIcon
+                  size={32}
+                  round={true}
+                  bgStyle={{ fill: "gray" }}
+                />
+              </LinkedinShareButton>
+              <FacebookShareButton url={"https://github.com/next-share"}>
+                <FacebookIcon
+                  size={32}
+                  round={true}
+                  bgStyle={{ fill: "gray" }}
+                />
+              </FacebookShareButton>
             </div>
           </div>
           <hr className="w-full border-[#D9D9D9] mt-10" />
@@ -77,7 +93,8 @@ const News = ({ blogpost}: { blogpost: PostProps }) => {
             </h1>
             <h2>{blogpost?.author?.title || "Author Title"}</h2>
             <p>
-              {blogpost?.author?.bio[0]?.children[0]?.text || "Author description goes here."}
+              {blogpost?.author?.bio[0]?.children[0]?.text ||
+                "Author description goes here."}
             </p>
             <div className="flex gap-4">
               <Image
@@ -106,7 +123,7 @@ const News = ({ blogpost}: { blogpost: PostProps }) => {
         </div>
         <hr className="w-full border-[#D9D9D9]" />
       </div>
-      <RelatedPost blogPost={blogpost?.relatedPosts}  />
+      <RelatedPost blogPost={blogpost?.relatedPosts} />
     </article>
   );
 };
