@@ -11,9 +11,7 @@ import {
   LinkedinShareButton,
   FacebookIcon,
   FacebookShareButton,
-  InstagramIcon,
-  InstapaperShareButton,
-} from "next-share";
+  } from "next-share";
 
 interface PostProps {
   title: string;
