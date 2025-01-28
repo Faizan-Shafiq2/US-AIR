@@ -12,14 +12,14 @@ export default function Home() {
     <div className=" bg-black">
       <div className="rounded-t-3xl  bg-white text-left">
         <div
-          className="h-screen flex justify-center items-center px-10  sm:ml-20 md:ml-60 text-justify"
+          className="h-max py-20 sm:py-16 md:py-24 flex justify-center items-center px-10  sm:ml-20 md:ml-60 text-justify"
           data-aos-duration="6000"
         >
           <GradientText text="Over 3 billion people lack reliable and affordable internet and cellphone access. Satellite communication can solve the current flaws of cellphone and internet services, however, current satellite communication solutions require over 40,000 satellites and large operational costs to connect the globe." />
         </div>
       </div>
       <div
-        className="h-screen bg-cover bg-center flex justify-center items-center"
+        className="h-max py-20 sm:py-16 md:py-24 bg-cover bg-center flex justify-center items-center"
         style={{ backgroundImage: "url('/assets/background-image.svg')" }}
       >
         <div className="flex justify-center items-center px-10 sm:px-24 md:px-32  text-white bg-opacity-20 overflow-hidden">
@@ -38,7 +38,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="bg-white h-max">
+      <div className="bg-white h-max py-4 ">
         <Slider />
       </div>
     </div>

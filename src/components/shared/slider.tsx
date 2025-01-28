@@ -6,7 +6,7 @@ import { slides } from "@/data/card-data";
 
 const Slider = () => {
   return (
-    <div className="w-full px-4 py-8 custom-styles">
+    <div className="w-full p-4 custom-styles">
       <Swiper
         spaceBetween={4}
         slidesPerView={3}
@@ -15,7 +15,8 @@ const Slider = () => {
         breakpoints={{
           768: { slidesPerView: 3 },
           640: { slidesPerView: 2 },
-          200: { slidesPerView: 2 },
+          391: {slidesPerView: 2},
+          200: { slidesPerView: 1 },
         }}
         className="custom-swiper"
       >

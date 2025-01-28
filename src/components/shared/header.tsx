@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useParams } from "next/navigation";
 import Image from "next/image";
+import { usePathname, useParams } from "next/navigation";
 
 import { navLinks } from "@/data/navbar";
 import {
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
   return (
     <div className="bg-black">
       <div
-        className="h-screen bg-cover bg-center bg-black"
+        className="h-max lg:h-screen 2xl:h-max bg-cover bg-center bg-black"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
         // data-aos="fade-left"
       >
@@ -86,15 +86,15 @@ const Header: React.FC = () => {
             <Image
               src="/assets/hamburger-menu.svg"
               alt="Hamburger menu"
+              width={10}
+              height={10}
               className="w-8 h-8"
-              width={32}
-              height={32}
             />
           </button>
         </div>
 
         <div
-          className={`fixed top-0 left-0 z-20 bg-black bg-opacity-90 text-white p-6 md:hidden h-full w-1/2 transition-transform duration-1600 ease-in-out ${
+          className={`fixed top-0 left-0 z-20 bg-black bg-opacity-90 text-white p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -102,9 +102,9 @@ const Header: React.FC = () => {
             <Image
               src="/assets/hamburger-menu.svg"
               alt="Close menu"
+              width={10}
+              height={10}
               className="w-8 h-8"
-              width={32}
-              height={32}
             />
           </button>
           <nav className="flex flex-col space-y-4">

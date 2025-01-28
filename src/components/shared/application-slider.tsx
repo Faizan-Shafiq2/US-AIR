@@ -18,7 +18,7 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards }) => {
 
   return (
     <div
-      className={`h-screen bg-cover bg-center`}
+      className={`bg-cover bg-center`}
       style={{
         backgroundImage: "url('/assets/satellite-with-planet-earth.svg')",
       }}
@@ -33,7 +33,7 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards }) => {
           640: { slidesPerView: 2 },
           200: { slidesPerView: 1 },
         }}
-        className="h-screen custom-swiper"
+        className="h-[70vh] custom-swiper"
       >
         {cards.map((card, index) => (
           <SwiperSlide
@@ -41,10 +41,10 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards }) => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="h-screen flex flex-col justify-end items-start border border-white">
+            <div className=" h-full flex flex-col justify-end items-start border border-white">
               <div
-                className={`h-[180px] pt-4  slider-details ${
-                  hoveredIndex === index ? "hovered" : ""
+                className={`h-[140px] pt-4  slider-details ${
+                  hoveredIndex === index ? "hovered h-[180px]" : ""
                 }`}
               >
                 <h1

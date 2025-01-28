@@ -19,7 +19,7 @@ export const metadata = {
 const TechnologyPage = () => {
   return (
     <div className=" bg-black">
-      <div className="rounded-t-3xl h-full md:h-screen px-4 md:px-16 bg-white text-center">
+      <div className="rounded-t-3xl h-max px-4 md:pb-20 md:px-16 bg-white text-center">
         <HeadingContent title="OUR TECHNOLOGY" />
 
         <div className="md:px-2 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -47,7 +47,7 @@ const TechnologyPage = () => {
 
       <div>
         <CommercialApplicationsSlider cards={backgroundcardsData} />
-        <div className="h-max md:h-screen bg-white p-12">
+        <div className="h-max bg-white p-12">
           <h1 className="text-2xl font-normal text-center pb-4">
             COMMERCIAL USE CASES & SOCIETAL IMPACT
           </h1>
@@ -73,9 +73,9 @@ const TechnologyPage = () => {
         <CommercialApplicationsSlider cards={defenseCapabilitiesData} />
       </div>
 
-      <div className="h-max md:h-[60vh] bg-white p-12">
+      <div className="h-max bg-white px-12 py-20">
         <h1 className="text-2xl font-normal text-center pb-4">
-          STELLA <sup>®</sup> FEATURES
+          STELLA <sup className="text-2xl">®</sup> FEATURES
         </h1>
         <Accordion data={stellaFeaturesData} />
       </div>
