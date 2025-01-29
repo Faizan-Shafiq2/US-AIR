@@ -31,7 +31,7 @@ interface PostProps {
 
 const News = ({ blogpost }: { blogpost: PostProps }) => {
   return (
-    <article className="article">
+    <article className="article rounded-t-3xl z-50">
       <h1 className="blog-title">{blogpost?.title}</h1>
       <div className="blog">
         <PortableText
@@ -41,12 +41,12 @@ const News = ({ blogpost }: { blogpost: PostProps }) => {
           }
         />
         <div>
-          <div className="flex md:flex-row flex-col md:justify-between justify-center gap-6">
-            <div className=" grid sm:grid-cols-3 grid-cols-2 justify-center md:mx-0 mx-auto md:gap-8 gap-2 text-xs">
+          <div className="flex md:flex-row flex-col md:justify-between items-start gap-6">
+            <div className="flex flex-wrap md:gap-8 gap-2 text-xs">
               {blogpost?.tag?.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex justify-center bg-black text-white rounded-full sm:py-3 py-2 md:px-4 px-2  md:text-[14px] text-[10px]`}
+                  className={`flex justify-center bg-black text-white rounded-full sm:py-3 py-2 md:w-[120px] w-[80px]  md:text-[14px] text-[10px]`}
                 >
                   {item}
                 </div>
@@ -85,12 +85,12 @@ const News = ({ blogpost }: { blogpost: PostProps }) => {
           ) : (
             <div className="w-24 h-24 bg-gray-200 rounded-full"></div>
           )}
-          <div className="flex flex-col md:items-start items-center gap-4 p-6">
-            <h1 className="-mb-5 font-semibold">
+          <div className="flex flex-col gap-4 md:px-6 md:pt-0 pt-4">
+            <h1 className="md:text-start text-center -mb-5 font-semibold">
               {blogpost?.author?.name || "Author Name"}
             </h1>
-            <h2>{blogpost?.author?.title || "Author Title"}</h2>
-            <p>
+            <h2 className="md:text-start text-center">{blogpost?.author?.title || "Author Title"}</h2>
+            <p className="text-start">
               {blogpost?.author?.bio[0]?.children[0]?.text ||
                 "Author description goes here."}
             </p>

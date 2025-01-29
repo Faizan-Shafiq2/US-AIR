@@ -12,12 +12,12 @@ const Introduction = () => {
             alt="US AIR TECH"
             width={320}
             height={320}
-            className="w-[40%] md:w-[100%] lg:w-[70%]"
+            className="w-[60%] sm:w-[50%] md:w-[100%] lg:w-[80%]"
           />
         </div>
 
         <div className="w-full md:w-2/3">
-          <p className="text-justify text-gray-800 2xl:text-3xl lg:text-xl md:text-lg">
+          <p className=" text-gray-800 2xl:text-3xl lg:text-xl md:text-lg">
             <span className="font-bold lg:text-3xl ">USAT</span> was founded in
             2017 by Dr. Patrick Gbele, a visionary in electrical and optical
             research. Dr. Gbele helped develop the Luneburg lens while earning
@@ -29,7 +29,6 @@ const Introduction = () => {
           </p>
         </div>
       </div>
-      <hr className="w-[90%] border-[#D9D9D9]" />
     </div>
   );
 };

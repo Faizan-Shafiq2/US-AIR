@@ -24,6 +24,11 @@ export const postType = defineType({
       to: {type: 'author'},
     }),
     defineField({
+      name: 'description',
+      type: 'string',
+    }),
+
+    defineField({
       name: 'tag',
       type: 'array',
       of: [defineArrayMember({type: 'string'})],

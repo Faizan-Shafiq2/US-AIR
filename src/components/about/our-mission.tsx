@@ -17,8 +17,8 @@ const OurMission = () => {
             />
           </div>
 
-          <div className="w-full md:w-1/2 max-w-[500px] px-10">
-            <p className="text-justify text-white 2xl:text-3xl lg:text-xl md:text-lg">
+          <div className="w-full md:w-1/2 max-w-[700px]  px-10">
+            <p className="text-white 2xl:text-3xl lg:text-xl md:text-lg">
               USAT seeks to promote human interconnectedness, development in all
               human activity ecosystems, and wellbeing through advanced
               satellite communication.

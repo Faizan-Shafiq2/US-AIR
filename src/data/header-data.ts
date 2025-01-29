@@ -1,8 +1,8 @@
 export const backgroundImages: Record<string, string> = {
-  "/technology": "/assets/background-image.svg",
-  "/company": "/assets/earth-background-image.svg",
-  "/career": "/assets/background-image.svg",
-  "/news": "/assets/earth-background-image.svg",
+  "/technology": "/technology.svg",
+  "/company": "/about.svg",
+  "/careers": "/about.svg",
+  "/news": "/news_page.svg",
 };
 
 export const titles: Record<string, string> = {

@@ -58,7 +58,7 @@ const Header: React.FC = () => {
   return (
     <div className="bg-black">
       <div
-        className="h-max lg:h-screen 2xl:h-max bg-cover bg-center bg-black"
+        className="h-[90vh] 2xl:h-max bg-cover bg-center bg-black"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
         // data-aos="fade-left"
       >
@@ -130,7 +130,7 @@ const Header: React.FC = () => {
           >
             <h1 className="heading">{title}</h1>
             <p
-              className={`text-start pb-8 text-[20px] mt-4 lg:text-[28px] font-light sm:text-justify transition-all duration-1000 ease-in-out ${
+              className={`text-start pb-8 text-[20px] mt-4 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
                 isAnimating
                   ? "opacity-0 translate-y-4"
                   : "opacity-100 translate-y-0"
