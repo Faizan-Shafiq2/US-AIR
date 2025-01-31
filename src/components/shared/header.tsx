@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useParams } from "next/navigation";
-
+import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/navbar";
 import {
   backgroundImages,
@@ -18,11 +17,12 @@ import AOS from "aos";
 const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [descriptionIndex, setDescriptionIndex] = useState(0);
+  const [titleIndex, setTitleIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const pathname = usePathname();
-  const params = useParams();
-  console.log("Params here", params);
-  console.log("pathname here", pathname);
+  // const params = useParams();
+  // console.log("Params here", params);
+  // console.log("pathname here", pathname);
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -36,9 +36,12 @@ const Header: React.FC = () => {
           setDescriptionIndex(
             (prevIndex) => (prevIndex + 1) % defaultDescriptions.length
           );
+          setTitleIndex(
+            (prevIndex) => (prevIndex + 1) % defaultTitle.length
+          );
           setIsAnimating(false);
         }, 1000);
-      }, 8000);
+      }, 4000);
       return () => clearInterval(interval);
     }
   }, [pathname]);
@@ -50,7 +53,8 @@ const Header: React.FC = () => {
   const backgroundImage =
     backgroundImages[pathname as keyof typeof backgroundImages] ||
     defaultBackground;
-  const title = titles[pathname as keyof typeof titles] || defaultTitle;
+  const dynamicTitle =
+    titles[pathname as keyof typeof titles] || defaultTitle[titleIndex];
   const dynamicDescription =
     descriptions[pathname as keyof typeof descriptions] ||
     defaultDescriptions[descriptionIndex];
@@ -128,7 +132,13 @@ const Header: React.FC = () => {
             className="mt-32 xs:mt-32 sm:mt-20 md:mt-8 z-10 mx-10 sm:mx-20 md:mx-30 lg:mx-40 text-white"
             data-aos="fade-up"
           >
-            <h1 className="heading">{title}</h1>
+            <h1
+              className={`heading transition-all duration-1000 ease-in-out ${
+                isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+              }`}
+            >
+              {dynamicTitle}
+            </h1>
             <p
               className={`text-start pb-8 text-[20px] mt-4 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
                 isAnimating

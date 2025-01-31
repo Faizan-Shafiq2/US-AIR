@@ -38,7 +38,7 @@ const RelatedPost = ({ blogPost }: RelatedPostProps) => {
           }}
           >
           {blogPost?.map((items, index) => (
-            <SwiperSlide key={index} className="lg:-ml-9 sm:ml-4 ml-6  ">
+            <SwiperSlide key={index}>
               <Link href={`/news/${items.slug.current}`}>
                 <Card
                   imageUrl={urlFor(items?.imageUrl).url()}
