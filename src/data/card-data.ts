@@ -100,3 +100,21 @@ export const imageCards = [
       "At USAT, we are pioneering the commercial market with groundbreaking advancements in ultrafast connectivity speeds and exceptional data bandwidth performance.",
   },
 ];
+
+export const technologyContent = [
+  {
+    title: "Innovative Solutions",
+    description:
+      "At USAT, we are pioneering the commercial market with groundbreaking advancements in ultrafast connectivity speeds and exceptional data bandwidth performance. Our advanced solutions surpass current industry standards, addressing the increasing demands for high data volume throughput and rapid data rates, and minimizing signal degradation and fading.",
+  },
+  {
+    title: "Luneberg Lens Technology",
+    description:
+      "At USAT, we are pioneering the commercial market with groundbreaking advancements in ultrafast connectivity speeds and exceptional data bandwidth performance.",
+  },
+  {
+    title: "Advanced Frequency Communications",
+    description:
+      "At USAT, we are pioneering the commercial market with groundbreaking advancements in ultrafast connectivity speeds and exceptional data bandwidth performance.",
+  },
+]

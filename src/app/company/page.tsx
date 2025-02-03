@@ -1,7 +1,6 @@
 import Introduction from '@/components/about/introduction'
 import Founder from '@/components/about/founder'
 import Recognition from '@/components/about/recognition'
-import OurMission from '@/components/about/our-mission'
 
 export const metadata = {
   title: "About Us",
@@ -10,11 +9,12 @@ export const metadata = {
 
 const AboutUsPage = () => {
   return (
-    <div className='bg-white rounded-2xl md:mx-10'>
+    <div className='bg-black'>
+      <div className='rounded-t-3xl px-4 md:px-16 bg-white'>
         <Introduction/>
-        <OurMission/>
         <Founder/>
         <Recognition/>
+        </div>
     </div>
   )
 }

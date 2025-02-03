@@ -22,9 +22,11 @@ const NewsPage = async ({ params }: Props) => {
   // const blog = await blogs();
 
   return (
-    <>
+    <div className="bg-black">
+      <div className="rounded-t-3xl px-4 md:px-16 py-6 bg-white"> 
       <News blogpost={blogpost} />
-    </>
+      </div>
+    </div>
   );
 };
 

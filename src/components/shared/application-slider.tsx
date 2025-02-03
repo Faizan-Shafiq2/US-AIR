@@ -20,7 +20,7 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards }) => {
     <div
       className={`bg-cover bg-center`}
       style={{
-        backgroundImage: "url('/assets/satellite-with-planet-earth.svg')",
+        backgroundImage: "url('/assets/commercial_application.png')",
       }}
     >
       <Swiper

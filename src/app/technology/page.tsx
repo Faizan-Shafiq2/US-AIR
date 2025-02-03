@@ -1,5 +1,6 @@
-import React from "react";
-import ImageCard from "@/components/shared/image-card";
+'use client'
+import React, { useState } from "react";
+// import ImageCard from "@/components/shared/image-card";
 import CommercialApplicationsSlider from "@/components/shared/application-slider";
 import Accordion from "@/components/shared/accordion";
 import HeadingContent from "@/components/shared/heading-content";
@@ -7,35 +8,47 @@ import GradientText from "@/components/shared/gradient-text";
 import ContactDetailsSection from "@/components/shared/contact-details-section";
 import { accordionData } from "@/data/accordion-data";
 import { stellaFeaturesData } from "@/data/accordion-data";
-import { backgroundcardsData } from "@/data/card-data";
+import { backgroundcardsData, technologyContent } from "@/data/card-data";
 import { defenseCapabilitiesData } from "@/data/card-data";
-import { imageCards } from "@/data/card-data";
+// import { imageCards } from "@/data/card-data";
 
-export const metadata = {
-  title: "Technology",
-  description: "Discover the cutting-edge technology at US AIR TECH and how it is revolutionizing various sectors.",
-};
+// export const metadata = {
+//   title: "Technology",
+//   description:
+//     "Discover the cutting-edge technology at US AIR TECH and how it is revolutionizing various sectors.",
+// };
 
 const TechnologyPage = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+
+  const handleTitleClick = (index: number) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
+
   return (
     <div className=" bg-black">
-      <div className="rounded-t-3xl h-max px-4 md:pb-20 md:px-16 bg-white text-center">
+      <div className="rounded-t-3xl max-h-[100vh] px-4 md:pb-20 md:px-16 bg-white text-center">
         <HeadingContent title="OUR TECHNOLOGY" />
 
-        <div className="md:px-2 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-4">
-          {imageCards.map((card, index) => (
-            <ImageCard
-              key={index}
-              src={card.src}
-              alt={card.alt}
-              title={card.title}
-              description={card.description}
-            />
-          ))}
+        <div className=" flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-10">
+          <div className="flex flex-col justify-center gap-4 text-sm max-w-[300px]">
+            {technologyContent.map((card, index) => (
+              <button key={index} onClick={() => handleTitleClick(index)}>
+                <h2 className={`text-left ${activeIndex === index ? "font-semibold text-center bg-black text-white p-2 rounded-lg" : "p-2 text-center text-[#888888] rounded-lg bg-[#F9F9F9] border-[1px] border-gray-500"}`}>{card.title}</h2>
+              </button>
+            ))}
+          </div>
+          <div className=" flex flex-col items-start justify-center text-start max-h-[500px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
+            {technologyContent.map((card, index) => (
+              <div key={index} className={`${activeIndex === index ? " block" : "hidden"}`}>
+                <h3>{card.description}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="pt-4 bg-white">
+      <div className="bg-white lg:pt-0 md:pt-10 sm:pt-16 pt-28">
         <HeadingContent
           title="COMMERCIAL APPLICATIONS"
           description="USAT is revolutionizing the commercial sector with our Luneburg lens technology, offering unparalleled connectivity and efficiency."
@@ -85,9 +98,7 @@ const TechnologyPage = () => {
           CUBESAT TECHNOLOGY
         </h1>
         <div className="px-4">
-          <GradientText
-            text="Our CubeSat technology replaces current satellite technology with energy-efficient production and operation."
-          />
+          <GradientText text="Our CubeSat technology replaces current satellite technology with energy-efficient production and operation." />
         </div>
       </div>
 
