@@ -66,14 +66,23 @@ const Header: React.FC = () => {
         style={{ backgroundImage: `url('${backgroundImage}')` }}
         // data-aos="fade-left"
       >
+        
+        <div className="grid grid-cols-3 p-3">
+          <Image
+          src={"/site_logo.png"}
+          alt="US AIR TECH"
+          width={100}
+          height={50}
+          />
+        
         <div className="z-20 py-8 text-white hidden md:flex justify-center">
           <nav className="flex space-x-8 text-sm">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`hover:text-blue-400 ${
-                  pathname === link.href ? "text-blue-400 font-semibold" : ""
+                className={`hover:text-blue-400 font-bold ${
+                  pathname === link.href ? "text-blue-400" : ""
                 }`}
               >
                 {link.label}
@@ -81,8 +90,8 @@ const Header: React.FC = () => {
             ))}
           </nav>
         </div>
-
-        <div className="absolute top-0 left-0 z-20 flex items-center justify-between  p-6 text-white md:hidden">
+        </div>
+        <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-6 text-white md:hidden">
           <button
             onClick={toggleSidebar}
             className="text-white focus:outline-none"
@@ -98,8 +107,8 @@ const Header: React.FC = () => {
         </div>
 
         <div
-          className={`fixed top-0 left-0 z-20 bg-black bg-opacity-90 text-white p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          className={`fixed top-0 right-0 z-20 bg-black bg-opacity-90 text-white p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${
+            isSidebarOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <button onClick={toggleSidebar} className="mb-6 focus:outline-none">

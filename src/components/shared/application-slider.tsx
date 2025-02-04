@@ -11,16 +11,17 @@ interface CardData {
 
 interface BackgroundImageCardProps {
   cards: CardData[];
+  backgroundImage?: string;
 }
 
-const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards }) => {
+const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgroundImage }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
       className={`bg-cover bg-center`}
       style={{
-        backgroundImage: "url('/assets/commercial_application.png')",
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <Swiper
@@ -43,8 +44,8 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards }) => {
           >
             <div className=" h-full flex flex-col justify-end items-start border border-white">
               <div
-                className={`h-[140px] pt-4  slider-details ${
-                  hoveredIndex === index ? "hovered h-[180px]" : ""
+                className={`h-[180px] pt-4  slider-details ${
+                  hoveredIndex === index ? "hovered h-[190px]" : ""
                 }`}
               >
                 <h1

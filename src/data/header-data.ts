@@ -1,6 +1,6 @@
 export const backgroundImages: Record<string, string> = {
   "/technology": "/technology.svg",
-  "/company": "/about.svg",
+  "/company": "/careers.svg",
   "/careers": "/careers.svg",
   "/news": "/news_page.svg",
 

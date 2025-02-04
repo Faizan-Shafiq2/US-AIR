@@ -11,6 +11,7 @@ const GradientText: React.FC<GradientTextProps> = ({ text }) => {
         className="bg-gradient-to-b from-[#c9c9c9] to-[#000000] bg-clip-text text-transparent"
         data-aos="fade-up"
         data-aos-duration="10000"
+        data-aos-once="true"
       >
         {text}
       </p>
