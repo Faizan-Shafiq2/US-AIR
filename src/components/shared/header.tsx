@@ -136,9 +136,9 @@ const Header: React.FC = () => {
           </nav>
         </div>
 
-        <div className="flex flex-col h-[80vh] justify-center items-start">
+        <div className="flex flex-col h-[85vh] justify-center items-start">
           <div
-            className="mt-32 xs:mt-32 sm:mt-20 md:mt-8 z-10 mx-10 sm:mx-20 md:mx-30 lg:mx-40 text-white"
+            className=" sm:mt-20 md:mt-8 z-10 mx-8 md:mx-30 lg:mx-40 text-white"
             data-aos="fade-up"
           >
             <h1
@@ -149,7 +149,7 @@ const Header: React.FC = () => {
               {dynamicTitle}
             </h1>
             <p
-              className={`text-start pb-8 text-[20px] mt-4 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
+              className={`text-start pb-8 text-lg mt-4 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
                 isAnimating
                   ? "opacity-0 translate-y-4"
                   : "opacity-100 translate-y-0"

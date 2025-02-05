@@ -5,7 +5,7 @@ const Founder = () => {
   return (
     <>
       <div>
-        <div className="max-w-screen h-full flex flex-col justify-center items-center px-10">
+        <div className="max-w-screen h-full flex flex-col justify-center items-center md:px-10 px-4">
           <div className="flex flex-col md:flex-row justify-center items-center md:gap-4 gap-8 w-full">
             <div className="w-full flex flex-col gap-4 lg:w-[60%] md:w-[75%]">
             <h1 className="font-bold lg:text-3xl ">About our Founder</h1>

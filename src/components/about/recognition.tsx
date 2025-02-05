@@ -10,7 +10,7 @@ const Recognition = () => {
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4">
         {recognitionData?.map((items, index) => (
         <div key={index}
-          className={`flex items-center ${items.classname} h-40 bg-accent text-accent px-14 rounded-xl`}
+          className={`flex items-center ${items.classname} h-40 bg-accent text-accent sm:px-14 px-6 rounded-xl`}
         >
           <p className="text-center"> {items.description}</p>
         </div>
