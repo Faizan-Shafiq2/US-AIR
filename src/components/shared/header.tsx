@@ -60,7 +60,7 @@ const Header: React.FC = () => {
   return (
     <div className="max-w-[1900px] mx-auto">
       <div
-        className="h-[90vh] 2xl:h-[60vh] bg-cover bg-no-repeat"
+        className="h-[80vh] 2xl:h-[75vh] bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url('${backgroundImage}')`,
           backgroundPosition: "center 0px",
@@ -136,9 +136,9 @@ const Header: React.FC = () => {
           </nav>
         </div>
 
-        <div className="flex flex-col justify-center items-start lg:mt-40 md:mt-20 mt-0">
+        <div className="flex flex-col justify-center items-start lg:mt-40 md:mt-28 mt-36">
           <div
-            className=" mt-10 sm:mt-20 md:mt-8 z-10 mx-8 md:mx-20 lg:mx-32 text-white"
+            className=" z-10 mx-8 md:mx-20 lg:mx-32 text-white"
             data-aos="fade-up"
           >
             <h1
@@ -151,7 +151,7 @@ const Header: React.FC = () => {
               {dynamicTitle}
             </h1>
             <p
-              className={`2xl:max-w-[1100px] max-w-[800px] text-start pb-8 text-lg mt-2 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
+              className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg mt-2 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
                 isAnimating
                   ? "opacity-0 translate-y-4"
                   : "opacity-100 translate-y-0"

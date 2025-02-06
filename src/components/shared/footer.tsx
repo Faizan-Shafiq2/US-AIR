@@ -53,12 +53,12 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="md:container lg:mx-auto mt-6 grid md:place-items-start place-items-center gap-4 md:px-12">
-        <div className="flex flex-row items-start justify-between gap-10 lg:justify-between ">
+      <div className="lg:mx-auto grid md:place-items-start place-items-center md:px-10">
+        
           <p className="text-xs">
             © 2023 USA AI TECH. All Rights Reserved
           </p>
-        </div>
+        
       </div>
     </footer>
   );
