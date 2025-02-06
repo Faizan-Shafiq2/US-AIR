@@ -11,7 +11,7 @@ export const metadata = {
 const Home: React.FC = () => {
   return (
     <div>
-        <div className="max-w-3xlg mx-auto">
+        <div className="max-w-[1900px] mx-auto">
       <div className="flex justify-end items-end rounded-t-3xl bg-white text-left">
         <div
           className="2xl:w-xlg lg:w-[900px] md:w-[700px] w-[500px] py-20 sm:py-16 md:py-20 px-10 sm:px-16 md:px-24 lg:px-32">
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
       </div>
       </div>
       <div
-        className="py-20 sm:py-16 md:py-20 bg-cover bg-center max-w-3xlg mx-auto"
+        className="py-20 sm:py-16 md:py-20 bg-cover bg-center max-w-[1900px] mx-auto"
         style={{ backgroundImage: "url('/assets/background-image.svg')" }}
       >
         <div className="flex 2xl:w-xlg lg:w-[900px] px-10 sm:px-24 md:px-32  text-white bg-opacity-20 overflow-hidden">
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="bg-white h-max py-4 max-w-3xlg mx-auto">
+      <div className="bg-white h-max py-4 max-w-[1900px] mx-auto">
         <Slider />
       </div>
     </div>

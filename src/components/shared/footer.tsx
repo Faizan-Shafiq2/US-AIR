@@ -5,8 +5,8 @@ import { navLinks } from "@/data/navbar";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white py-8 lg:px-4">
-      <div className="max-w-3xlg mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+    <footer className="bg-black max-w-[1900px] mx-auto text-white py-8 lg:px-4">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
         <div className="h-auto flex flex-col items-start justify-start md:ml-8 md:h-[calc(40vh-50px)]">
           <h2 className="text-lg font-normal mb-4">Pages</h2>
           <div className="flex flex-col md:flex-row flex-wrap gap-2 md:gap-6 lg:gap-8">

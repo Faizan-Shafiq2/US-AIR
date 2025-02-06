@@ -58,7 +58,7 @@ const Header: React.FC = () => {
     defaultDescriptions[descriptionIndex];
 
   return (
-    <div className="max-w-3xlg mx-auto">
+    <div className="max-w-[1900px] mx-auto">
       <div
         className="h-[90vh] 2xl:h-[60vh] bg-cover bg-no-repeat"
         style={{
