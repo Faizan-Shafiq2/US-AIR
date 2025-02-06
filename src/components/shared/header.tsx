@@ -113,11 +113,11 @@ const Header: React.FC = () => {
         >
           <button onClick={toggleSidebar} className="mb-6 focus:outline-none">
             <Image
-              src="/assets/hamburger-menu.svg"
+              src="/assets/cross-white-icon.svg"
               alt="Close menu"
               width={10}
               height={10}
-              className="w-8 h-8"
+              className="w-3 h-3"
             />
           </button>
           <nav className="flex flex-col space-y-4">
