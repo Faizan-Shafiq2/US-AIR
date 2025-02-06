@@ -27,7 +27,7 @@ export const slides = [
   },
   {
     title: "DEFENSE <br/> CAPABILITIES",
-    image: "/assets/slider-1.svg",
+    image: "/assets/slider-3.svg",
   },
   
 ];

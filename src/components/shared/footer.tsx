@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
             </p>
             <Link
               href="mailto:info@usaitechcorp.com"
-              className="text-blue-400 hover:underline"
+              className="text-[#98C0FC] hover:underline"
             >
               info@usaitechcorp.com
             </Link>
