@@ -60,7 +60,7 @@ const Header: React.FC = () => {
   return (
     <div className="max-w-[1900px] mx-auto">
       <div
-        className="h-[80vh] 2xl:h-[75vh] bg-cover bg-no-repeat"
+        className="h-[80vh] 2xl:h-[75vh] bg-cover bg-no-repeat flex flex-col justify-between"
         style={{
           backgroundImage: `url('${backgroundImage}')`,
           backgroundPosition: "center 0px",
@@ -136,7 +136,7 @@ const Header: React.FC = () => {
           </nav>
         </div>
 
-        <div className="flex flex-col justify-center items-start lg:mt-40 md:mt-28 mt-36">
+        <div className="flex flex-col items-start mb-20">
           <div
             className=" z-10 mx-8 md:mx-20 lg:mx-32 text-white"
             data-aos="fade-up"
