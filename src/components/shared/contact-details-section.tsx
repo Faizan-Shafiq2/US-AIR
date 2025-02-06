@@ -9,7 +9,7 @@ interface GradientTextProps {
 const ContactDetailsSection: React.FC<GradientTextProps> = ({ text1, text2, link }) => {
   return (
     <div
-    className="h-[25vh] flex flex-col justify-center items-center rounded-xl m-auto"
+    className="h-[25vh] flex flex-col justify-center items-center gap-2 rounded-xl m-auto"
     style={{
       backgroundImage: "url('/assets/galaxy-stars-background-img.svg')",
     }}

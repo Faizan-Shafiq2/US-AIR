@@ -36,9 +36,7 @@ const Header: React.FC = () => {
           setDescriptionIndex(
             (prevIndex) => (prevIndex + 1) % defaultDescriptions.length
           );
-          setTitleIndex(
-            (prevIndex) => (prevIndex + 1) % defaultTitle.length
-          );
+          setTitleIndex((prevIndex) => (prevIndex + 1) % defaultTitle.length);
           setIsAnimating(false);
         }, 1000);
       }, 4000);
@@ -60,36 +58,38 @@ const Header: React.FC = () => {
     defaultDescriptions[descriptionIndex];
 
   return (
-    <div className="bg-black">
+    <div className="max-w-3xlg mx-auto">
       <div
-        className="h-[90vh] 2xl:h-max bg-cover bg-center bg-black"
-        style={{ backgroundImage: `url('${backgroundImage}')` }}
-        // data-aos="fade-left"
+        className="h-[90vh] 2xl:h-[60vh] bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url('${backgroundImage}')`,
+          backgroundPosition: "center 0px",
+        }}
       >
-        
         <div className="grid grid-cols-3 p-3">
           <Image
-          src={"/site_logo.png"}
-          alt="US AIR TECH"
-          width={100}
-          height={50}
+            src={"/site_logo.png"}
+            alt="US AIR TECH"
+            width={100}
+            height={50}
+            className="lg:ml-28"
           />
-        
-        <div className="z-20 py-8 text-white hidden md:flex justify-center">
-          <nav className="flex space-x-8 text-sm">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`hover:text-blue-400 font-bold ${
-                  pathname === link.href ? "text-blue-400" : ""
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+
+          <div className="z-20 py-8 text-white hidden md:flex justify-center">
+            <nav className="flex space-x-8 text-sm">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`hover:text-blue-400 font-bold ${
+                    pathname === link.href ? "text-blue-400" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
         <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-6 text-white md:hidden">
           <button
@@ -136,20 +136,22 @@ const Header: React.FC = () => {
           </nav>
         </div>
 
-        <div className="flex flex-col h-[85vh] justify-center items-start">
+        <div className="flex flex-col justify-center items-start lg:mt-40 md:mt-20 mt-0">
           <div
-            className=" sm:mt-20 md:mt-8 z-10 mx-8 md:mx-30 lg:mx-40 text-white"
+            className=" mt-10 sm:mt-20 md:mt-8 z-10 mx-8 md:mx-20 lg:mx-32 text-white"
             data-aos="fade-up"
           >
             <h1
               className={`heading transition-all duration-1000 ease-in-out ${
-                isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+                isAnimating
+                  ? "opacity-0 translate-y-4"
+                  : "opacity-100 translate-y-0"
               }`}
             >
               {dynamicTitle}
             </h1>
             <p
-              className={`text-start pb-8 text-lg mt-4 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
+              className={`2xl:max-w-[1100px] max-w-[800px] text-start pb-8 text-lg mt-2 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
                 isAnimating
                   ? "opacity-0 translate-y-4"
                   : "opacity-100 translate-y-0"

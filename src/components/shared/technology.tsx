@@ -34,11 +34,11 @@ const Technology = () => {
           <div className="flex flex-col justify-center gap-4 text-sm max-w-[300px]">
             {technologyContent.map((card, index) => (
               <button key={index} onClick={() => handleTitleClick(index)}>
-                <h2 className={`text-left ${activeIndex === index ? "font-semibold text-center bg-black text-white p-2 rounded-lg" : "p-2 text-center text-[#888888] rounded-lg bg-[#F9F9F9] border-[1px] border-gray-500"}`}>{card.title}</h2>
+                <h2 className={`text-left ${activeIndex === index ? "font-semibold text-center bg-black border-black border-[1px] text-white p-2 rounded-lg" : "p-2 text-center text-[#888888] rounded-lg bg-[#F9F9F9] border-[1px] border-gray-500"}`}>{card.title}</h2>
               </button>
             ))}
           </div>
-          <div className=" flex flex-col items-start justify-center text-start max-h-[500px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
+          <div className="h-[50%] flex flex-col items-start justify-center text-start md:text-lg text-sm max-h-[600px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
             {technologyContent.map((card, index) => (
               <div key={index} className={`${activeIndex === index ? " block" : "hidden"}`}>
                 <h3>{card.description}</h3>
@@ -48,7 +48,7 @@ const Technology = () => {
         </div>
       </div>
 
-      <div className="bg-white lg:pt-0 md:pt-10 sm:pt-16 pt-28">
+      <div className="bg-white lg:pt-0 md:pt-10 sm:pt-10 pt-10">
         <HeadingContent
           title="COMMERCIAL APPLICATIONS"
           description="USAT is revolutionizing the commercial sector with our Luneburg lens technology, offering unparalleled connectivity and efficiency."
@@ -56,13 +56,12 @@ const Technology = () => {
           textColor="text-black"
           extraClasses=""
         />
-      </div>
-
       <div>
         <CommercialApplicationsSlider 
         cards={backgroundcardsData}
         backgroundImage="/assets/commercial_application.png"
         />
+        </div>
         <div className="h-max bg-white p-12">
           <h1 className="text-2xl font-normal text-center pb-4">
             COMMERCIAL USE CASES & SOCIETAL IMPACT

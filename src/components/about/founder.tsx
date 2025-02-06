@@ -6,7 +6,7 @@ const Founder = () => {
     <>
       <div>
         <div className="max-w-screen h-full flex flex-col justify-center items-center md:px-10 px-4">
-          <div className="flex flex-col md:flex-row justify-center items-center md:gap-4 gap-8 w-full">
+          <div className="flex flex-col md:flex-row items-center md:gap-16 gap-8 w-full">
             <div className="w-full flex flex-col gap-4 lg:w-[60%] md:w-[75%]">
             <h1 className="font-bold lg:text-3xl ">About our Founder</h1>
               <p className="text-gray-800 2xl:text-3xl lg:text-xl md:text-lg">
@@ -21,7 +21,7 @@ const Founder = () => {
                 advanced antenna technologies.
               </p>
             </div>
-            <div className="relative w-full md:w-1/4 flex flex-col items-center justify-center pt-8">
+            <div className="relative w-full md:w-1/4 mx-auto flex flex-col items-center justify-center pt-8">
               <Image
                 src={"/founder.svg"}
                 alt="US AIR TECH"

@@ -10,21 +10,23 @@ export const metadata = {
 
 const Home: React.FC = () => {
   return (
-    <div className=" bg-black">
-      <div className="rounded-t-3xl bg-white text-left">
+    <div>
+        <div className="max-w-3xlg mx-auto">
+      <div className="flex justify-end items-end rounded-t-3xl bg-white text-left">
         <div
-          className="max-w-[900px] mx-auto py-20 sm:py-16 md:py-20 px-10 sm:px-24 md:px-32">
+          className="2xl:w-xlg lg:w-[900px] md:w-[700px] w-[500px] py-20 sm:py-16 md:py-20 px-10 sm:px-16 md:px-24 lg:px-32">
           <GradientText 
           text="Over 3 billion people lack reliable and affordable internet and cellphone access. Satellite communication can solve the current flaws of cellphone and internet services, however, current satellite communication solutions require over 40,000 satellites and large operational costs to connect the globe." />
         </div>
       </div>
+      </div>
       <div
-        className="py-20 sm:py-16 md:py-20 bg-cover bg-center"
+        className="py-20 sm:py-16 md:py-20 bg-cover bg-center max-w-3xlg mx-auto"
         style={{ backgroundImage: "url('/assets/background-image.svg')" }}
       >
-        <div className="flex max-w-[900px] px-10 sm:px-24 md:px-32  text-white bg-opacity-20 overflow-hidden">
+        <div className="flex 2xl:w-xlg lg:w-[900px] px-10 sm:px-24 md:px-32  text-white bg-opacity-20 overflow-hidden">
           <p
-            className="xs:leading-loose sm:leading-loose md:text-lg md:leading-relaxed lg:text-xl leading-relaxed 2xl:text-3xl text-justify"
+            className="xs:leading-loose sm:leading-loose md:text-lg md:leading-relaxed lg:text-xl leading-relaxed 2xl:text-3xl"
             data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-once="true"
@@ -39,7 +41,7 @@ const Home: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="bg-white h-max py-4 ">
+      <div className="bg-white h-max py-4 max-w-3xlg mx-auto">
         <Slider />
       </div>
     </div>

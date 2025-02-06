@@ -18,7 +18,7 @@ const RelatedPost = ({ blogPost }: RelatedPostProps) => {
         <div className="swiper-button-prev"></div>
         <Swiper
           modules={[Autoplay, Navigation]}
-          spaceBetween={50}
+          spaceBetween={2}
           slidesPerView={3}
           autoplay={true}
           navigation={{
@@ -28,12 +28,15 @@ const RelatedPost = ({ blogPost }: RelatedPostProps) => {
           breakpoints={{
             200: {
               slidesPerView: 1,
+              centeredSlides: true, 
             },
             640: {
               slidesPerView: 2,
+              centeredSlides: false, 
             },
             1440: {
               slidesPerView: 3,
+              centeredSlides: false,
             },
           }}
           >

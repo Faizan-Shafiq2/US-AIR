@@ -18,21 +18,18 @@ export const btnData = [
 
 export const slides = [
   {
-    title: "REMOTE INTERNET ACCESS",
+    title: "OUR <br/> TECHNOLOGY",
     image: "/assets/slider-1.svg",
   },
   {
-    title: "TELECOMMUNICATION",
+    title: "COMMERCIAL <br/> APPLICATIONS",
     image: "/assets/slider-2.svg",
   },
   {
-    title: "IMPROVED SERVICE INCLUDE",
+    title: "DEFENSE <br/> CAPABILITIES",
     image: "/assets/slider-1.svg",
   },
-  {
-    title: "IMPROVED SERVICE INCLUDE",
-    image: "/assets/slider-2.svg",
-  },
+  
 ];
 
 export const backgroundcardsData = [

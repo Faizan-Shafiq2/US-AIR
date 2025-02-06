@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({
   const day = new Intl.DateTimeFormat("en-US", { day: "numeric" }).format(newdate);
   return (
     <>
-      <div className="max-w-sm bg-white rounded-lg md:mx-0 mx-auto lg:w-full md:w-[90%] overflow-hidden">
+      <div className="max-w-sm bg-white rounded-lg md:mx-0 mx-auto lg:w-full md:w-[90%] w-full overflow-hidden">
         <div className="relative h-48">
           <Image
             src={imageUrl}
