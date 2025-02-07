@@ -29,7 +29,7 @@ const RelatedPost = ({ blogPost }: RelatedPostProps) => {
             200: {
               slidesPerView: 1,
               centeredSlides: true, 
-            },
+              },
             640: {
               slidesPerView: 2,
               centeredSlides: false, 

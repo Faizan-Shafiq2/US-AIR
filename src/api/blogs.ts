@@ -13,6 +13,7 @@ export const blogPost = async (slug: string) => {
   const query = `*[_type == "post" && slug.current == $slug][0] {
   _id,
   title,
+  description,
   tag,
   mainImage {
     asset->{url}
@@ -56,10 +57,6 @@ export const blogPost = async (slug: string) => {
   }
 }
 `;
-
-  // *[_type == "post" && references(*[_type == "category" && slug.current == "space-mission"]._id)]
-  // *[_type == "post" && slug.current != 'usat' && references(*[_type == "category" && slug.current == "space-mission"]._id)]
-
   const encodedQuery = encodeURIComponent(query);
   const url = `https://503tkegr.api.sanity.io/v2025-01-13/data/query/production?query=${encodedQuery}&$slug="${slug}"`;
 

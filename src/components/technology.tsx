@@ -10,13 +10,7 @@ import { accordionData } from "@/data/accordion-data";
 import { stellaFeaturesData } from "@/data/accordion-data";
 import { backgroundcardsData, technologyContent } from "@/data/card-data";
 import { defenseCapabilitiesData } from "@/data/card-data";
-// import { imageCards } from "@/data/card-data";
 
-// export const metadata = {
-//   title: "Technology",
-//   description:
-//     "Discover the cutting-edge technology at US AIR TECH and how it is revolutionizing various sectors.",
-// };
 
 const Technology = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);

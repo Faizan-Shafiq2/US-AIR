@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const NewsPage = async ({ params }: Props) => {
   const { slug } = await params;
   const blogpost = await blogPost(slug);
-  // const blog = await blogs();
 
   return (
     <div className="bg-black">

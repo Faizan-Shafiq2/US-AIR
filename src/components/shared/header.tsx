@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { blogPost } from "@/api/blogs";
+import { usePathname, useParams } from "next/navigation";
 import { navLinks } from "@/data/navbar";
 import {
   backgroundImages,
@@ -19,17 +20,18 @@ const Header: React.FC = () => {
   const [descriptionIndex, setDescriptionIndex] = useState(0);
   const [titleIndex, setTitleIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [blogTitle, setBlogTitle] = useState("");
+  const [blogDescription, setBlogDescription] = useState("");
+  const [blogImage, setBlogImage] = useState("");
   const pathname = usePathname();
-  // const params = useParams();
-  // console.log("Params here", params);
-  // console.log("pathname here", pathname);
+  const params = useParams();
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
 
   useEffect(() => {
-    if (pathname == "/") {
+    if (pathname === "/") {
       const interval = setInterval(() => {
         setIsAnimating(true);
         setTimeout(() => {
@@ -44,36 +46,51 @@ const Header: React.FC = () => {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    const fetchBlogImage = async () => {
+      if (params.slug) {
+        try {
+          const post = await blogPost(params.slug as string);
+          if (post && post.mainImage) {
+            setBlogImage(post.mainImage.asset.url);
+          }
+          if (post && post.title) {
+            setBlogTitle(post.title);
+          }
+          if (post && post.description) {
+            setBlogDescription(post.description);
+          }
+        } catch (error) {
+          console.error("Error fetching blog image:", error);
+        }
+      }
+    };
+
+    fetchBlogImage();
+  }, [params.slug]);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const backgroundImage =
-    backgroundImages[pathname as keyof typeof backgroundImages] ||
-    defaultBackground;
-  const dynamicTitle =
-    titles[pathname as keyof typeof titles] || defaultTitle[titleIndex];
-  const dynamicDescription =
-    descriptions[pathname as keyof typeof descriptions] ||
-    defaultDescriptions[descriptionIndex];
+  const backgroundImage = backgroundImages[pathname as keyof typeof backgroundImages] || defaultBackground;
+  const dynamicTitle = titles[pathname] || defaultTitle[titleIndex];
+  const dynamicDescription = descriptions[pathname] || defaultDescriptions[descriptionIndex];
+  const isSlugPresent = params.slug ? blogImage : backgroundImage;
+  const isTitlePresent = params.slug ? blogTitle : dynamicTitle;
+  const isDescriptionPresent = params.slug ? blogDescription : dynamicDescription;
 
   return (
     <div className="max-w-[1900px] mx-auto">
       <div
-        className="h-[80vh] 2xl:h-[75vh] bg-cover bg-no-repeat flex flex-col justify-between"
+        className="h-[80vh] 2xl:h-[85vh] bg-cover bg-no-repeat flex flex-col justify-between"
         style={{
-          backgroundImage: `url('${backgroundImage}')`,
+          backgroundImage: `url('${isSlugPresent}')`,
           backgroundPosition: "center 0px",
         }}
       >
         <div className="grid grid-cols-3 p-3">
-          <Image
-            src={"/site_logo.png"}
-            alt="US AIR TECH"
-            width={100}
-            height={50}
-            className="lg:ml-28"
-          />
+          <Image src="/site_logo.png" alt="US AIR TECH" width={100} height={50} className="lg:ml-28" />
 
           <div className="z-20 py-8 text-white hidden md:flex justify-center">
             <nav className="flex space-x-8 text-sm">
@@ -81,9 +98,7 @@ const Header: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`hover:text-blue-400 font-bold ${
-                    pathname === link.href ? "text-blue-400" : ""
-                  }`}
+                  className={`hover:text-blue-400 font-bold ${pathname === link.href ? "text-blue-400" : ""}`}
                 >
                   {link.label}
                 </Link>
@@ -91,6 +106,7 @@ const Header: React.FC = () => {
             </nav>
           </div>
         </div>
+
         <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-6 text-white md:hidden">
           <button
             onClick={toggleSidebar}
@@ -137,27 +153,20 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-start mb-20">
-          <div
-            className=" z-10 mx-8 md:mx-20 lg:mx-32 text-white"
-            data-aos="fade-up"
-          >
+          <div className="z-10 mx-8 md:mx-20 lg:mx-32 text-white" data-aos="fade-up">
             <h1
               className={`heading transition-all duration-1000 ease-in-out ${
-                isAnimating
-                  ? "opacity-0 translate-y-4"
-                  : "opacity-100 translate-y-0"
+                isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
               }`}
             >
-              {dynamicTitle}
+              {isTitlePresent}
             </h1>
             <p
               className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg mt-2 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
-                isAnimating
-                  ? "opacity-0 translate-y-4"
-                  : "opacity-100 translate-y-0"
+                isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
               }`}
             >
-              {dynamicDescription}
+              {isDescriptionPresent}
             </p>
           </div>
         </div>

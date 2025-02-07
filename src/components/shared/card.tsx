@@ -21,13 +21,13 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div className="max-w-sm bg-white rounded-lg md:mx-0 mx-auto lg:w-full md:w-[90%] w-full overflow-hidden">
-        <div className="relative h-48">
+        <div className="relative h-60">
           <Image
             src={imageUrl}
-            alt="Satcom Image"
+            alt="Image"
             layout="fill"
             objectFit="cover"
-            className="rounded-lg"
+            className="rounded-3xl"
           />
         </div>
 

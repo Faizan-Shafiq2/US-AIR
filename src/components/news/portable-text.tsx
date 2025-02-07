@@ -7,13 +7,13 @@ const PortableTextComponent = {
       const { asset, alt } = value;
       const imageUrl = urlFor(asset._ref).url(); 
       return (
-        <div className="image flex justify-center">
-          <Image src={imageUrl} alt={alt || 'Image'} width={400} height={300}/>
+        <div className="flex justify-center">
+          <Image src={imageUrl} alt={alt || 'Image'} width={400} height={300}
+          className='rounded-2xl'/>
         </div>
-
       );
     },
-},
+  },
 
 marks: {
     internalLink: ({ value, children }: { value: { reference: { slug: { current: string } } }, children: React.ReactNode }) => {
@@ -21,6 +21,6 @@ marks: {
         const href = `/posts/${reference.slug.current}`; 
         return <a href={href}>{children}</a>;
     },
-},
+  },
 };
 export default PortableTextComponent;

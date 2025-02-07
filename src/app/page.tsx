@@ -1,4 +1,4 @@
-import Home from '@/components/shared/home'
+import Home from '@/components/home'
 import React from 'react'
 
 const Page = () => {
