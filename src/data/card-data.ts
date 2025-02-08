@@ -1,5 +1,3 @@
-import { link } from "fs";
-
 export const btnData = [
   {
     label: "STELLA",
