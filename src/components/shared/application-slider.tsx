@@ -71,9 +71,11 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgr
                     >
                       {card.title}
                     </h1>
-                    <p className="slider-description px-6 text-justify" data-aos="fade-up">
-                      {card.paragraph}
-                    </p>
+                    <p
+                      className="slider-description px-6 text-justify"
+                      data-aos="fade-up"
+                      dangerouslySetInnerHTML={{ __html: card.paragraph || "" }}
+                    ></p>
                   </div>
                 )}
               </div>

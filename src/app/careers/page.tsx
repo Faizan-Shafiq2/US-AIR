@@ -8,8 +8,8 @@ export const metadata = {
 
 const CareerPage = () => {
   return (
-    <div className="bg-black">
-      <div className="rounded-t-3xl px-4 md:px-16 bg-white">
+    <div>
+      <div className="px-4 md:px-16">
       <Careers />
       </div>
     </div>

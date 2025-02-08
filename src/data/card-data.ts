@@ -1,3 +1,5 @@
+import { link } from "fs";
+
 export const btnData = [
   {
     label: "STELLA",
@@ -20,14 +22,17 @@ export const slides = [
   {
     title: "OUR <br/> TECHNOLOGY",
     image: "/assets/slider-1.svg",
+    url: "/technology/#our-technology",
   },
   {
     title: "COMMERCIAL <br/> APPLICATIONS",
     image: "/assets/slider-2.svg",
+    url: "/technology/#commercial-applications",
   },
   {
     title: "DEFENSE <br/> CAPABILITIES",
     image: "/assets/slider-3.svg",
+    url: "/technology/#defense-capabilities",
   },
   
 ];
@@ -36,7 +41,7 @@ export const backgroundcardsData = [
   {
     title: "REMOTE INTERNET ACCESS",
     paragraph:
-      "Enhances network coverage, reliability, and dependability with 6G bandwidth and speed",
+      " Provides connectivity to underserved communities, remote areas, and vehicles across air, land, and sea",
   },
   {
     title: "TELECOMMUNICATION",
@@ -46,19 +51,19 @@ export const backgroundcardsData = [
   {
     title: "IMPROVED SERVICE INCLUDE",
     paragraph:
-      "Enhances network coverage, reliability, and dependability with 6G bandwidth and speed",
+      " o Disaster and emergency response <br/> o Remote healthcare <br/> o Online education and research",
   },
   {
     title: "ENTERPRISE SOLUTIONS",
     paragraph:
-      "Enhances network coverage, reliability, and dependability with 6G bandwidth and speed",
+      "Supports large-scale business communication needs with robust satellite links",
   },
 ];
 
 export const defenseCapabilitiesData = [
   {
     paragraph:
-      "Efficient Processing and Exploitation of Signals of Opportunity (SOOP)",
+      "Unparalleled Electronic Warfare and Tactical Communications (EW) techniques",
   },
   {
     paragraph:
@@ -66,11 +71,11 @@ export const defenseCapabilitiesData = [
   },
   {
     paragraph:
-      "Simultaneous connection and tracking of multiple satellites in low and medium Earth orbits (LEO and MEO), ensuring reliable and efficient communication",
+      "Efficient Processing and Exploitation of Signals of Opportunity (SOOP)",
   },
   {
     paragraph:
-      "Unparalleled Electronic Warfare and Tactical Communications (EW) techniques",
+      "Simultaneous connection and tracking of multiple satellites in low and medium Earth orbits (LEO and MEO), ensuring reliable and efficient communication",
   },
 ];
 
@@ -107,11 +112,11 @@ export const technologyContent = [
   {
     title: "Luneberg Lens Technology",
     description:
-      "At USAT, we are pioneering the commercial market with groundbreaking advancements in ultrafast connectivity speeds and exceptional data bandwidth performance.",
+      "What sets us apart is our innovative Luneburg Lens technology, which consolidates the functionality of multiple satellite receivers into a single, compact, low-maintenance package. This revolutionary approach not only simplifies installation but also ensures sustained high performance with minimal upkeep.",
   },
   {
     title: "Advanced Frequency Communications",
     description:
-      "At USAT, we are pioneering the commercial market with groundbreaking advancements in ultrafast connectivity speeds and exceptional data bandwidth performance.",
+      " USAT specializes in communications across microwave, terahertz, and optical frequencies. Our comprehensive product suite includes satellite communication ground terminals, satellite modules, handheld devices, 5G/6G cellphone ground stations, and ultra-sensitive receivers, all designed to seamlessly integrate with existing market technologies. Whether needs are frequency-specific or require a cross-frequency regime framework, our solutions are customizable to meet unique requirements.",
   },
 ]

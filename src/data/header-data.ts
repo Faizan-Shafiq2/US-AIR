@@ -2,17 +2,14 @@ export const backgroundImages: Record<string, string> = {
   "/technology": "/technology.svg",
   "/company": "/careers.svg",
   "/careers": "/careers.svg",
-  "/news": "/news_page.svg",
+  "/news": "/news.svg",
 
-
-  // "/news/tutorial-of-pii": "/mainImage.svg",
-  // "/news/usat": "/news_page.svg",
 };
 
 export const titles: Record<string, string> = {
   "/technology": "TECHNOLOGY",
   "/company": "ABOUT USAT",
-  "/careers": "We are USAT",
+  "/careers": "Careers",
   "/news": "NEWS",
 };
 
@@ -20,9 +17,9 @@ export const descriptions: Record<string, string> = {
   "/technology": "COMMERCIAL | DEFENSE",
   "/company":
     "We seeks to promote human interconnectedness, development in all human activity ecosystems, and wellbeing through advanced satellite communications.",
-  "/careers": "We bring people together",
+  "/careers": "We are USAT",
   "/news":
-    " Stay updated with the latest news and developments at US AIR TECH.",
+    " Stay up-to-date with our latest news and developments.",
 };
 
 export const defaultBackground = "/assets/earth-background-image.svg";

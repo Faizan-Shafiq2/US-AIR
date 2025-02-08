@@ -20,19 +20,19 @@ const Technology = () => {
   };
 
   return (
-    <div className=" bg-black">
-      <div className="rounded-t-3xl max-h-[100vh] px-4 md:pb-20 md:px-16 bg-white text-center">
-        <HeadingContent title="OUR TECHNOLOGY" />
+    <div >
+      <div className="h-[80vh] px-4 md:px-16 bg-white text-center">
+        <HeadingContent title="OUR TECHNOLOGY" id="our-technology"/>
 
-        <div className=" flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-10">
+        <div className="h-[60%] flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-10">
           <div className="flex flex-col justify-center gap-4 text-sm max-w-[300px]">
             {technologyContent.map((card, index) => (
               <button key={index} onClick={() => handleTitleClick(index)}>
-                <h2 className={`text-left ${activeIndex === index ? "font-semibold text-center bg-black border-black border-[1px] text-white p-2 rounded-lg" : "p-2 text-center text-[#888888] rounded-lg bg-[#F9F9F9] border-[1px] border-gray-500"}`}>{card.title}</h2>
+                <h2 className={`text-left ${activeIndex === index ? "font-semibold text-center bg-[#e1e1e1] text-black p-2 rounded-lg" : "text-center bg-black text-white p-2 rounded-lg"}`}>{card.title}</h2>
               </button>
             ))}
           </div>
-          <div className="h-[50%] flex flex-col items-start justify-center text-start md:text-lg text-sm max-h-[600px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
+          <div className="flex flex-col items-start justify-center text-start md:text-lg text-sm max-h-[400px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
             {technologyContent.map((card, index) => (
               <div key={index} className={`${activeIndex === index ? " block" : "hidden"}`}>
                 <h3>{card.description}</h3>
@@ -49,6 +49,7 @@ const Technology = () => {
           bgColor="bg-white"
           textColor="text-black"
           extraClasses=""
+          id="commercial-applications"
         />
       <div>
         <CommercialApplicationsSlider 
@@ -75,6 +76,7 @@ const Technology = () => {
           bgColor="bg-white"
           textColor="text-black"
           extraClasses=""
+          id="defense-capabilities"
         />
       </div>
 
@@ -87,12 +89,12 @@ const Technology = () => {
 
       <div className="h-max bg-white px-12 py-20">
         <h1 className="text-2xl font-normal text-center pb-4">
-          STELLA <sup className="text-2xl">®</sup> FEATURES
+          STELLA <span className="text-3xl -ml-2">®</span> FEATURES
         </h1>
         <Accordion data={stellaFeaturesData} />
       </div>
 
-      <div className="h-max bg-white grid grid-cols-1  sm:grid-cols-2 place-items-center sm:px-12 sm:pt-16">
+      <div className="h-max bg-white grid grid-cols-1 sm:grid-cols-2 place-items-center sm:px-12 sm:pt-16">
         <h1 className="text-xl md:text-5xl mx-auto flex justify-center items-center p-4">
           CUBESAT TECHNOLOGY
         </h1>

@@ -9,8 +9,8 @@ export const metadata = {
 
 const AboutUsPage = () => {
   return (
-    <div className='bg-black'>
-      <div className='rounded-t-3xl px-4 md:px-16 bg-white'>
+    <div>
+      <div className='px-4 md:px-16'>
         <Introduction/>
         <Founder/>
         <Recognition/>

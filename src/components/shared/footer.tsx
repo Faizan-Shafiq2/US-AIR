@@ -5,7 +5,7 @@ import { navLinks } from "@/data/navbar";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black max-w-[1900px] mx-auto text-white py-8 lg:px-4">
+    <footer className="bg-black max-w-[2000px] mx-auto text-white py-8 lg:px-4">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
         <div className="h-auto flex flex-col items-start justify-start md:ml-8 md:h-[calc(40vh-50px)]">
           <h2 className="text-lg font-normal mb-4">Pages</h2>
@@ -28,8 +28,8 @@ const Footer: React.FC = () => {
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-start gap-4 text-xs font-light">
             <h2>520-308-5512</h2>
             <p className="md:-ml-8">
-              University of Arizona - Science and Technology Park 9040 South
-              Rita Road, Suite 1270 - Tucson, AZ 85747-9192 USA
+              University of Arizona <br /> Science and Technology Park <br /> 9040 South
+              Rita Road, Suite 1270 <br /> Tucson, AZ 85747-9192 USA
             </p>
             <Link
               href="mailto:info@usaitechcorp.com"

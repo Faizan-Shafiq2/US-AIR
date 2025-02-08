@@ -81,7 +81,7 @@ const Header: React.FC = () => {
   const isDescriptionPresent = params.slug ? blogDescription : dynamicDescription;
 
   return (
-    <div className="max-w-[1900px] mx-auto">
+    <div className="max-w-[2000px] mx-auto">
       <div
         className="h-[80vh] 2xl:h-[85vh] bg-cover bg-no-repeat flex flex-col justify-between"
         style={{
@@ -89,8 +89,8 @@ const Header: React.FC = () => {
           backgroundPosition: "center 0px",
         }}
       >
-        <div className="grid grid-cols-3 p-3">
-          <Image src="/site_logo.png" alt="US AIR TECH" width={100} height={50} className="lg:ml-28" />
+        <div>
+          {/* <Image src="/site_logo.png" alt="US AIR TECH" width={100} height={50} className="lg:ml-28" /> */}
 
           <div className="z-20 py-8 text-white hidden md:flex justify-center">
             <nav className="flex space-x-8 text-sm">
