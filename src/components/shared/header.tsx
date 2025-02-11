@@ -80,6 +80,16 @@ const Header: React.FC = () => {
   const isTitlePresent = params.slug ? blogTitle : dynamicTitle;
   const isDescriptionPresent = params.slug ? blogDescription : dynamicDescription;
 
+  const backgroundSizeStyle = pathname === "/" ? "150%" : "cover";
+  const getLinkHref = (word: string) => {
+    if (word.toUpperCase() === "COMMERCIAL") {
+      return "#commercial-applications";
+    } else if (word.toUpperCase() === "DEFENSE") {
+      return "#defense-capabilities";
+    }
+    return "#";
+  };
+
   return (
     <div className="max-w-[2000px] mx-auto">
       <div
@@ -87,6 +97,7 @@ const Header: React.FC = () => {
         style={{
           backgroundImage: `url('${isSlugPresent}')`,
           backgroundPosition: "center 0px",
+          backgroundSize: backgroundSizeStyle,
         }}
       >
         <div>
@@ -162,12 +173,23 @@ const Header: React.FC = () => {
               {isTitlePresent}
             </h1>
             <p
-              className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg mt-2 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
-                isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-              }`}
-            >
-              {isDescriptionPresent}
-            </p>
+  className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg mt-2 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
+    isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+  }`}
+>
+  {isDescriptionPresent === "COMMERCIAL | DEFENSE" ? (
+    isDescriptionPresent.split(" | ").map((word, index) => (
+      <React.Fragment key={index}>
+        <Link href={getLinkHref(word)} className="cursor-pointer">
+          {word}
+        </Link>
+        {index !== isDescriptionPresent.split(" | ").length - 1 && " | "}
+      </React.Fragment>
+    ))
+  ) : (
+    isDescriptionPresent
+  )}
+</p>
           </div>
         </div>
       </div>

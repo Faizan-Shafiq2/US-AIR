@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Careers = () => {
   return (
@@ -18,20 +19,24 @@ const Careers = () => {
           </p>
           <div className="flex gap-3">
             <div className="w-16 rounded-full bg-black">
+            <Link href="https://www.linkedin.com/company/us-air-tech/">
               <Image
                 src={"/linkedIn.svg"}
                 alt="US AIR TECH"
                 width={200}
                 height={200}
               />
+              </Link>
             </div>
             <div className="flex px-3 items-center justify-center w-16 rounded-full bg-black border-2 border-[#7f7f7f]">
+              <Link href="mailto:info@usaitechcorp.com">
               <Image
                 src={"/mail.svg"}
                 alt="US AIR TECH"
                 width={200}
                 height={200}
               />
+              </Link>
             </div>
           </div>
         </div>

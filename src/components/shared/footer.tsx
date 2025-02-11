@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           <h1 className="text-lg font-normal mb-4 md:mb-6">Inquire</h1>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-start gap-4 text-xs font-light">
             <h2>520-308-5512</h2>
-            <p className="md:-ml-8">
+            <p className="md:-ml-10">
               University of Arizona <br /> Science and Technology Park <br /> 9040 South
               Rita Road, Suite 1270 <br /> Tucson, AZ 85747-9192 USA
             </p>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <div>
-              <Link href="https://linkedin.com/">
+              <Link href="https://www.linkedin.com/company/us-air-tech/">
                 <Image
                   src={"/linkedIn.svg"}
                   alt={"Image"}

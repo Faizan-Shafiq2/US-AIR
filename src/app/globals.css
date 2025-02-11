@@ -39,7 +39,6 @@ body {
   }
   .description {
     font-size: 1.2rem;
-
   }
 }
 
@@ -327,7 +326,6 @@ body {
   animation: titleMoveDown 1s forwards;
 }
 
-
 .title-hovered {
   transform: translateY(-10px);
   animation: titleMoveUp 1s forwards;
@@ -405,7 +403,7 @@ body {
 
 .slider-details.hovered {
   animation: white 0.7s forwards;
-  color: black
+  color: black;
 }
 
 .slider-description {
@@ -436,4 +434,3 @@ body {
   display: flex !important;
   gap: 10px !important;
 }
-

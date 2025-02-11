@@ -1,16 +1,14 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 // import ImageCard from "@/components/shared/image-card";
 import CommercialApplicationsSlider from "@/components/shared/application-slider";
 import Accordion from "@/components/shared/accordion";
 import HeadingContent from "@/components/shared/heading-content";
-import GradientText from "@/components/shared/gradient-text";
 import ContactDetailsSection from "@/components/shared/contact-details-section";
 import { accordionData } from "@/data/accordion-data";
 import { stellaFeaturesData } from "@/data/accordion-data";
 import { backgroundcardsData, technologyContent } from "@/data/card-data";
 import { defenseCapabilitiesData } from "@/data/card-data";
-
 
 const Technology = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -20,21 +18,28 @@ const Technology = () => {
   };
 
   return (
-    <div >
+    <div>
       <div className="h-[80vh] px-4 md:px-16 bg-white text-center">
-        <HeadingContent title="OUR TECHNOLOGY" id="our-technology"/>
+        <HeadingContent title="OUR TECHNOLOGY" id="our-technology" />
 
-        <div className="h-[60%] flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-10">
+        <div className="h-[60%] flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-10 -mt-6">
           <div className="flex flex-col justify-center gap-4 text-sm max-w-[300px]">
             {technologyContent.map((card, index) => (
               <button key={index} onClick={() => handleTitleClick(index)}>
-                <h2 className={`text-left ${activeIndex === index ? "font-semibold text-center bg-[#e1e1e1] text-black p-2 rounded-lg" : "text-center bg-black text-white p-2 rounded-lg"}`}>{card.title}</h2>
+                <h2
+                  className={`text-left ${activeIndex === index ? "font-semibold text-center bg-[#e1e1e1] text-black p-2 rounded-lg" : "text-center bg-black text-white p-2 rounded-lg"}`}
+                >
+                  {card.title}
+                </h2>
               </button>
             ))}
           </div>
           <div className="flex flex-col items-start justify-center text-start md:text-lg text-sm max-h-[400px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
             {technologyContent.map((card, index) => (
-              <div key={index} className={`${activeIndex === index ? " block" : "hidden"}`}>
+              <div
+                key={index}
+                className={`${activeIndex === index ? " block" : "hidden"}`}
+              >
                 <h3>{card.description}</h3>
               </div>
             ))}
@@ -50,12 +55,12 @@ const Technology = () => {
           textColor="text-black"
           extraClasses=""
           id="commercial-applications"
-        />
-      <div>
-        <CommercialApplicationsSlider 
-        cards={backgroundcardsData}
-        backgroundImage="/assets/commercial_application.png"
-        />
+          />
+        <div>
+          <CommercialApplicationsSlider
+            cards={backgroundcardsData}
+            backgroundImage="/assets/commercial_application.png"
+          />
         </div>
         <div className="h-max bg-white p-12">
           <h1 className="text-2xl font-normal text-center pb-4">
@@ -72,7 +77,7 @@ const Technology = () => {
         </div>
         <HeadingContent
           title="DEFENSE CAPABILITIES"
-          description="USAT's technologies will advance defense activities that rely on satellite communications and antemma technologies. Our advanced antenna technology, STELLA ®, offers "
+          description="USAT's technologies will advance defense activities that rely on satellite communications and antemma technologies. Our advanced antenna technology, STELLA ®, offers: "
           bgColor="bg-white"
           textColor="text-black"
           extraClasses=""
@@ -81,9 +86,9 @@ const Technology = () => {
       </div>
 
       <div>
-        <CommercialApplicationsSlider 
-        cards={defenseCapabilitiesData} 
-        backgroundImage="/assets/defense_capabilities.png"
+        <CommercialApplicationsSlider
+          cards={defenseCapabilitiesData}
+          backgroundImage="/assets/defense_capabilities.png"
         />
       </div>
 
@@ -99,7 +104,10 @@ const Technology = () => {
           CUBESAT TECHNOLOGY
         </h1>
         <div className="px-4">
-          <GradientText text="Our CubeSat technology replaces current satellite technology with energy-efficient production and operation." />
+          <p className=" bg-gradient-to-b from-[#939393] to-[#000000] bg-clip-text text-transparent w-full xs:leading-loose sm:leading-loose md:text-xl md:leading-relaxed lg:text-3xl 2xl:text-4xl leading-relaxed">
+            Our CubeSat technology replaces current satellite technology with
+            energy-efficient production and operation.
+          </p>
         </div>
       </div>
 

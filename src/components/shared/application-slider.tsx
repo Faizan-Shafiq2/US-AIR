@@ -63,7 +63,7 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgr
                   )}
                 </h1>
                 {hoveredIndex === index && card.paragraph && (
-                  <div className="h-[180px] pt-4 bg-white" data-aos="fade-up">
+                  <div className="h-[180px] pt-4 bg-white" data-aos-duration="800" data-aos="fade-up">
                     <h1
                       className={`slider-title ${
                         hoveredIndex === index ? "slider-title-hovered" : ""
@@ -72,7 +72,8 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgr
                       {card.title}
                     </h1>
                     <p
-                      className="slider-description px-6 text-justify"
+                      className="slider-description px-4 text-justify"
+                      data-aos-duration="800"
                       data-aos="fade-up"
                       dangerouslySetInnerHTML={{ __html: card.paragraph || "" }}
                     ></p>
