@@ -22,19 +22,19 @@ const Technology = () => {
       <div className="h-[80vh] px-4 md:px-16 bg-white text-center">
         <HeadingContent title="OUR TECHNOLOGY" id="our-technology" />
 
-        <div className="h-[60%] flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-10 -mt-6">
+        <div className="h-[70%] flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-6 md:mt-0 mt-4 ">
           <div className="flex flex-col justify-center gap-4 text-sm max-w-[300px]">
             {technologyContent.map((card, index) => (
               <button key={index} onClick={() => handleTitleClick(index)}>
                 <h2
-                  className={`text-left ${activeIndex === index ? "font-semibold text-center bg-[#e1e1e1] text-black p-2 rounded-lg" : "text-center bg-black text-white p-2 rounded-lg"}`}
+                  className={`text-left ${activeIndex === index ? "font-semibold text-center md:text-base text-xs bg-[#e1e1e1] text-black md:p-2 p-1 rounded-lg" : "md:text-base text-xs text-center bg-black text-white md:p-2 p-1 rounded-lg"}`}
                 >
                   {card.title}
                 </h2>
               </button>
             ))}
           </div>
-          <div className="flex flex-col items-start justify-center text-start md:text-lg text-sm max-h-[400px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
+          <div className="flex flex-col items-start justify-center text-start md:text-lg text-sm h-[370px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
             {technologyContent.map((card, index) => (
               <div
                 key={index}
@@ -47,7 +47,7 @@ const Technology = () => {
         </div>
       </div>
 
-      <div className="bg-white lg:pt-0 md:pt-10 sm:pt-10 pt-10">
+      <div className="bg-white ">
         <HeadingContent
           title="COMMERCIAL APPLICATIONS"
           description="USAT is revolutionizing the commercial sector with our Luneburg lens technology, offering unparalleled connectivity and efficiency."

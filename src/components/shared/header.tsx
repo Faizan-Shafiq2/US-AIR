@@ -73,14 +73,35 @@ const Header: React.FC = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const backgroundImage = backgroundImages[pathname as keyof typeof backgroundImages] || defaultBackground;
+  const backgroundImage =
+    backgroundImages[pathname as keyof typeof backgroundImages] ||
+    defaultBackground;
   const dynamicTitle = titles[pathname] || defaultTitle[titleIndex];
-  const dynamicDescription = descriptions[pathname] || defaultDescriptions[descriptionIndex];
+  const dynamicDescription =
+    descriptions[pathname] || defaultDescriptions[descriptionIndex];
   const isSlugPresent = params.slug ? blogImage : backgroundImage;
   const isTitlePresent = params.slug ? blogTitle : dynamicTitle;
-  const isDescriptionPresent = params.slug ? blogDescription : dynamicDescription;
+  const isDescriptionPresent = params.slug
+    ? blogDescription
+    : dynamicDescription;
+    const [backgroundSizeStyle, setBackgroundSizeStyle] = useState(
+      pathname === "/" ? "150%" : "cover"
+    );
+    
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth < 768 && pathname === "/") {
+          setBackgroundSizeStyle("cover");
+        } else {
+          setBackgroundSizeStyle(pathname === "/" ? "150%" : "cover");
+        }
+      };
+    
+      handleResize(); // Set initial size
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, [pathname]);
 
-  const backgroundSizeStyle = pathname === "/" ? "150%" : "cover";
   const getLinkHref = (word: string) => {
     if (word.toUpperCase() === "COMMERCIAL") {
       return "#commercial-applications";
@@ -164,32 +185,38 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-start mb-20">
-          <div className="z-10 mx-8 md:mx-20 lg:mx-32 text-white" data-aos="fade-up">
+          <div
+            className="z-10 mx-8 md:mx-20 lg:mx-32 text-white"
+            data-aos="fade-up"
+          >
             <h1
               className={`heading transition-all duration-1000 ease-in-out ${
-                isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+                isAnimating
+                  ? "opacity-0 translate-y-4"
+                  : "opacity-100 translate-y-0"
               }`}
             >
               {isTitlePresent}
             </h1>
             <p
-  className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg mt-2 lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
-    isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-  }`}
->
-  {isDescriptionPresent === "COMMERCIAL | DEFENSE" ? (
-    isDescriptionPresent.split(" | ").map((word, index) => (
-      <React.Fragment key={index}>
-        <Link href={getLinkHref(word)} className="cursor-pointer">
-          {word}
-        </Link>
-        {index !== isDescriptionPresent.split(" | ").length - 1 && " | "}
-      </React.Fragment>
-    ))
-  ) : (
-    isDescriptionPresent
-  )}
-</p>
+              className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
+                isAnimating
+                  ? "opacity-0 translate-y-4"
+                  : "opacity-100 translate-y-0"
+              }`}
+            >
+              {isDescriptionPresent === "COMMERCIAL | DEFENSE"
+                ? isDescriptionPresent.split(" | ").map((word, index) => (
+                    <React.Fragment key={index}>
+                      <Link href={getLinkHref(word)} className="cursor-pointer">
+                        {word}
+                      </Link>
+                      {index !== isDescriptionPresent.split(" | ").length - 1 &&
+                        " | "}
+                    </React.Fragment>
+                  ))
+                : isDescriptionPresent}
+            </p>
           </div>
         </div>
       </div>
