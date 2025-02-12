@@ -1,6 +1,6 @@
 export const blogs = async () => {
   const response = await fetch(
-    "https://503tkegr.api.sanity.io/v2025-01-13/data/query/production?query=*%5B_type%3D%3D%22post%22%5D"
+    "https://503tkegr.api.sanity.io/v2025-01-13/data/query/production?query=*%5B_type%3D%3D%22post%22%5D", { cache: 'no-store' }
   );
   if (!response.ok) {
     throw new Error("Network response was not ok");
