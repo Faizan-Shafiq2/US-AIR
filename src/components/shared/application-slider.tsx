@@ -18,9 +18,9 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgr
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="relative">
+    <div className="relative bg-black">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-70"
+        className="absolute inset-0 bg-cover bg-center opacity-50"
         style={{
           backgroundImage: `url(${backgroundImage})`,
         }}

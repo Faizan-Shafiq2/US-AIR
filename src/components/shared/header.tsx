@@ -117,7 +117,7 @@ const Header: React.FC = () => {
         className="h-[80vh] 2xl:h-[85vh] bg-cover bg-no-repeat flex flex-col justify-between"
         style={{
           backgroundImage: `url('${isSlugPresent}')`,
-          backgroundPosition: "center 0px",
+          backgroundPosition: "center -90px",
           backgroundSize: backgroundSizeStyle,
         }}
       >

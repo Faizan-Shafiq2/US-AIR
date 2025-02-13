@@ -22,7 +22,7 @@ export const descriptions: Record<string, string> = {
     " Stay up-to-date with our latest news and developments.",
 };
 
-export const defaultBackground = "/assets/earth-background-image.svg";
+export const defaultBackground = "/assets/earth-background-image.jpg";
 export const defaultTitle = ["OUR MISSION", "SATCOM GLOBAL CONNECTIVITY"];
 
 export const defaultDescriptions = [

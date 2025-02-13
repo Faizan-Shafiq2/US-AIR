@@ -24,7 +24,7 @@ export const slides = [
   },
   {
     title: "COMMERCIAL <br/> APPLICATIONS",
-    image: "/assets/slider-2.svg",
+    image: "/assets/slider-2.jpg",
     url: "/technology/#commercial-applications",
   },
   {

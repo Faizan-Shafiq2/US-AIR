@@ -23,11 +23,11 @@ const Technology = () => {
         <HeadingContent title="OUR TECHNOLOGY" id="our-technology" />
 
         <div className="h-[70%] flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-6 md:mt-0 mt-4 ">
-          <div className="flex flex-col justify-center gap-4 text-sm max-w-[300px]">
+          <div className="flex flex-col justify-center gap-4 text-sm max-w-[400px]">
             {technologyContent.map((card, index) => (
               <button key={index} onClick={() => handleTitleClick(index)}>
                 <h2
-                  className={`text-left ${activeIndex === index ? "font-semibold text-center md:text-base text-xs bg-[#e1e1e1] text-black md:p-2 p-1 rounded-lg" : "md:text-base text-xs text-center bg-black text-white md:p-2 p-1 rounded-lg"}`}
+                  className={`text-left ${activeIndex === index ? "font-semibold text-center md:text-base text-xs bg-[#e1e1e1] text-black p-2 rounded-lg" : "md:text-base text-xs text-center bg-black text-white p-2 rounded-lg"}`}
                 >
                   {card.title}
                 </h2>
