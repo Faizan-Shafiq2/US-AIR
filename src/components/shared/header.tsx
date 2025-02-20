@@ -14,6 +14,8 @@ import {
   defaultDescriptions,
 } from "@/data/header-data";
 import AOS from "aos";
+import { getCldVideoUrl } from 'next-cloudinary';
+import 'next-cloudinary/dist/cld-video-player.css';
 
 const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -25,7 +27,10 @@ const Header: React.FC = () => {
   const [blogImage, setBlogImage] = useState("");
   const pathname = usePathname();
   const params = useParams();
-
+  const [backgroundSource, setBackgroundSource] = useState<string | undefined>(undefined);
+  const [isVideo, setIsVideo] = useState(false);
+  const videoPaths = ["/", "/careers"];
+  
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
@@ -69,6 +74,17 @@ const Header: React.FC = () => {
     fetchBlogImage();
   }, [params.slug]);
 
+  useEffect(() => {
+    const source = backgroundImages[pathname] || defaultBackground;
+    if (params.slug) {
+      setBackgroundSource(blogImage);
+      setIsVideo(false);
+    } else {
+      setBackgroundSource(source);
+      setIsVideo(videoPaths.includes(pathname));
+    }
+  }, [pathname, params.slug, blogImage]);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -84,23 +100,18 @@ const Header: React.FC = () => {
   const isDescriptionPresent = params.slug
     ? blogDescription
     : dynamicDescription;
-    const [backgroundSizeStyle, setBackgroundSizeStyle] = useState(
-      pathname === "/" ? "150%" : "cover"
-    );
-    
-    useEffect(() => {
-      const handleResize = () => {
-        if (window.innerWidth < 768 && pathname === "/") {
-          setBackgroundSizeStyle("cover");
-        } else {
-          setBackgroundSizeStyle(pathname === "/" ? "150%" : "cover");
-        }
-      };
-    
-      handleResize(); // Set initial size
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, [pathname]);
+  const [backgroundPosition, setBackgroundPosition] = useState(
+    pathname === "/company" ? "0px" : "center -70px"
+  );
+  useEffect(() => {
+    const handleResize = () => {
+      setBackgroundPosition(pathname === "/company" ? "0px" : "center 0px");
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [pathname]);
 
   const getLinkHref = (word: string) => {
     if (word.toUpperCase() === "COMMERCIAL") {
@@ -113,18 +124,29 @@ const Header: React.FC = () => {
 
   return (
     <div className="max-w-[2000px] mx-auto">
-      <div
-        className="h-[80vh] 2xl:h-[85vh] bg-cover bg-no-repeat flex flex-col justify-between"
-        style={{
-          backgroundImage: `url('${isSlugPresent}')`,
-          backgroundPosition: "center -90px",
-          backgroundSize: backgroundSizeStyle,
-        }}
-      >
-        <div>
-          {/* <Image src="/site_logo.png" alt="US AIR TECH" width={100} height={50} className="lg:ml-28" /> */}
-
-          <div className="z-20 py-8 text-white hidden md:flex justify-center">
+      <div className="h-[90vh] 2xl:h-[85vh] relative">
+        {isVideo ? (
+          <video
+            id="background-video"
+            width="100%"
+            height="100%"
+            src={getCldVideoUrl({ src: backgroundSource || "", format: 'mp4' })}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <div
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: `url('${isSlugPresent}')`,
+              backgroundPosition: backgroundPosition,
+            }}
+          />
+        )}
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between">
+          <div className="z-50 py-8 text-white hidden md:flex justify-center">
             <nav className="flex space-x-8 text-sm">
               {navLinks.map((link) => (
                 <Link
@@ -137,86 +159,83 @@ const Header: React.FC = () => {
               ))}
             </nav>
           </div>
-        </div>
-
-        <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-6 text-white md:hidden">
-          <button
-            onClick={toggleSidebar}
-            className="text-white focus:outline-none"
-          >
-            <Image
-              src="/assets/hamburger-menu.svg"
-              alt="Hamburger menu"
-              width={10}
-              height={10}
-              className="w-8 h-8"
-            />
-          </button>
-        </div>
-
-        <div
-          className={`fixed top-0 right-0 z-20 bg-black bg-opacity-90 text-white p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${
-            isSidebarOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <button onClick={toggleSidebar} className="mb-6 focus:outline-none">
-            <Image
-              src="/assets/cross-white-icon.svg"
-              alt="Close menu"
-              width={10}
-              height={10}
-              className="w-3 h-3"
-            />
-          </button>
-          <nav className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`hover:text-blue-400 ${
-                  pathname === link.href ? "text-blue-400 font-semibold" : ""
-                }`}
-                onClick={() => setIsSidebarOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
-        <div className="flex flex-col items-start mb-20">
+          <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-6 text-white md:hidden">
+            <button
+              onClick={toggleSidebar}
+              className="text-white focus:outline-none"
+            >
+              <Image
+                src="/assets/hamburger-menu.svg"
+                alt="Hamburger menu"
+                width={10}
+                height={10}
+                className="w-8 h-8"
+              />
+            </button>
+          </div>
           <div
-            className="z-10 mx-8 md:mx-20 lg:mx-32 text-white"
-            data-aos="fade-up"
+            className={`fixed top-0 right-0 z-20 bg-black bg-opacity-90 text-white p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${
+              isSidebarOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           >
-            <h1
-              className={`heading transition-all duration-1000 ease-in-out ${
-                isAnimating
-                  ? "opacity-0 translate-y-4"
-                  : "opacity-100 translate-y-0"
-              }`}
+            <button onClick={toggleSidebar} className="mb-6 focus:outline-none">
+              <Image
+                src="/assets/cross-white-icon.svg"
+                alt="Close menu"
+                width={10}
+                height={10}
+                className="w-3 h-3"
+              />
+            </button>
+            <nav className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`hover:text-blue-400 ${
+                    pathname === link.href ? "text-blue-400 font-semibold" : ""
+                  }`}
+                  onClick={() => setIsSidebarOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div className="absolute bottom-0 left-0 w-full flex flex-col items-start md:mb-20 mb-10">
+            <div
+              className="z-10 mx-8 md:mx-20 lg:mx-32 text-white"
+              data-aos="fade-up"
             >
-              {isTitlePresent}
-            </h1>
-            <p
-              className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
-                isAnimating
-                  ? "opacity-0 translate-y-4"
-                  : "opacity-100 translate-y-0"
-              }`}
-            >
-              {isDescriptionPresent === "COMMERCIAL | DEFENSE"
-                ? isDescriptionPresent.split(" | ").map((word, index) => (
-                    <React.Fragment key={index}>
-                      <Link href={getLinkHref(word)} className="cursor-pointer">
-                        {word}
-                      </Link>
-                      {index !== isDescriptionPresent.split(" | ").length - 1 &&
-                        " | "}
-                    </React.Fragment>
-                  ))
-                : isDescriptionPresent}
-            </p>
+              <h1
+                className={`heading transition-all duration-1000 ease-in-out ${
+                  isAnimating
+                    ? "opacity-0 translate-y-4"
+                    : "opacity-100 translate-y-0"
+                }`}
+              >
+                {isTitlePresent}
+              </h1>
+              <p
+                className={`2xl:max-w-[1100px] max-w-[700px] text-start pb-8 text-lg lg:text-xl 2xl:text-3xl font-light transition-all duration-1000 ease-in-out ${
+                  isAnimating
+                    ? "opacity-0 translate-y-4"
+                    : "opacity-100 translate-y-0"
+                }`}
+              >
+                {isDescriptionPresent === "COMMERCIAL | DEFENSE"
+                  ? isDescriptionPresent.split(" | ").map((word, index) => (
+                      <React.Fragment key={index}>
+                        <Link href={getLinkHref(word)} className="cursor-pointer">
+                          {word}
+                        </Link>
+                        {index !== isDescriptionPresent.split(" | ").length - 1 &&
+                          " | "}
+                      </React.Fragment>
+                    ))
+                  : isDescriptionPresent}
+              </p>
+            </div>
           </div>
         </div>
       </div>
