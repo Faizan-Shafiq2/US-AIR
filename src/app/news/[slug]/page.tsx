@@ -22,7 +22,7 @@ const NewsPage = async ({ params }: Props) => {
 
   return (
     <div >
-      <div className="px-4 md:px-16 py-6"> 
+      <div className="max-w-[2000px] mx-auto px-4 md:px-16 py-6"> 
       <News blogpost={blogpost} />
       </div>
     </div>

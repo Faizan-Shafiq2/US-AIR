@@ -1,5 +1,5 @@
-import Technology from '@/components/technology'
-import React from 'react'
+import Technology from "@/components/technology";
+import React from "react";
 
 export const metadata = {
   title: "Technology",
@@ -7,14 +7,12 @@ export const metadata = {
     "Discover the cutting-edge technology at US AIR TECH and how it is revolutionizing various sectors.",
 };
 
-
 const TechnologyPage = () => {
   return (
-    <div>
-      
-    <Technology/>
+    <div className="max-w-[2000px] mx-auto">
+      <Technology />
     </div>
-  )
-}
+  );
+};
 
-export default TechnologyPage
+export default TechnologyPage;

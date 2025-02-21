@@ -9,7 +9,7 @@ export const metadata = {
 const CareerPage = () => {
   return (
     <div>
-      <div className="px-4 md:px-16">
+      <div className="max-w-[2000px] mx-auto px-4 md:px-16">
       <Careers />
       </div>
     </div>

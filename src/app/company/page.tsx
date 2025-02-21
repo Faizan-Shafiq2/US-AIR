@@ -10,7 +10,7 @@ export const metadata = {
 const AboutUsPage = () => {
   return (
     <div>
-      <div className='px-4 md:px-16'>
+      <div className='max-w-[2000px] mx-auto px-4 md:px-16'>
         <Introduction/>
         <Founder/>
         <Recognition/>
