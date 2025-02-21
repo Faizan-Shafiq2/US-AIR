@@ -18,11 +18,11 @@ const Technology = () => {
   };
 
   return (
-    <div>
-      <div className="h-[80vh] px-4 md:px-16 bg-white text-center">
+    <div className="w-full">
+      <div className="px-4 md:px-16 py-10 bg-white text-center">
         <HeadingContent title="OUR TECHNOLOGY" id="our-technology" />
 
-        <div className="h-[70%] flex flex-col md:flex-row justify-center items-center lg:gap-20 gap-6 md:mt-0 mt-4 ">
+        <div className="h-[80%] flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 lg:gap-20 w-full max-w-screen-xl mx-auto">
           <div className="flex flex-col justify-center gap-4 text-sm max-w-[400px]">
             {technologyContent.map((card, index) => (
               <button key={index} onClick={() => handleTitleClick(index)}>

@@ -1,9 +1,8 @@
 export const backgroundImages: Record<string, string> = {
   "/technology": "/technology.svg",
   "/company": "/company.svg",
-  "/careers": "/bboqkyu4s3y0coq5fd1i",
-  "/news": "/news.svg",
-
+  "/careers": "bboqkyu4s3y0coq5fd1i",
+  "/news": "/careers.svg",
 };
 
 export const titles: Record<string, string> = {
@@ -22,6 +21,7 @@ export const descriptions: Record<string, string> = {
     " Stay up-to-date with our latest news and developments.",
 };
 
+// export const defaultBackground = "/assets/earth-background-image.jpg";
 export const defaultBackground = "qtp5pymylw5l7ou7xvei";
 export const defaultTitle = ["OUR MISSION", "SATCOM GLOBAL CONNECTIVITY"];
 

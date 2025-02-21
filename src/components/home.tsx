@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <div
           className="2xl:w-xlg lg:w-[900px] md:w-[700px] w-[500px] py-20 sm:py-16 md:py-20 px-10 sm:px-16 md:px-24 lg:px-32">
           <GradientText 
-          text="Over 3 billion people lack reliable and affordable internet and cellphone access. Satellite communication can solve the current flaws of cellphone and internet services, however, current satellite communication solutions require over 40,000 satellites and large operational costs to connect the globe." />
+          text="Over 3 billion people lack reliable and affordable internet and cellphone access. Satellite communication can solve the current flaws of cellphone and internet services, however, current satellite communication solutions require over 30,000 satellites and large operational costs to connect the globe." />
         </div>
       </div>
       </div>

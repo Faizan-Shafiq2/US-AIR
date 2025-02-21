@@ -129,7 +129,7 @@ const Header: React.FC = () => {
           <video
             id="background-video"
             width="100%"
-            height="100%"
+            height="50%"
             src={getCldVideoUrl({ src: backgroundSource || "", format: 'mp4' })}
             autoPlay
             loop
