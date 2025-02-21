@@ -1,4 +1,5 @@
 export const backgroundImages: Record<string, string> = {
+  "/": "qtp5pymylw5l7ou7xvei",
   "/technology": "/technology.svg",
   "/company": "/company.jpg",
   "/careers": "bboqkyu4s3y0coq5fd1i",
@@ -13,7 +14,7 @@ export const titles: Record<string, string> = {
 };
 
 export const descriptions: Record<string, string> = {
-  "/technology": "COMMERCIAL | DEFENSE",
+"/technology": "COMMERCIAL | DEFENSE",
   "/company":
     "We seeks to promote human interconnectedness, development in all human activity ecosystems, and wellbeing through advanced satellite communications.",
   "/careers": "We are USAT",
@@ -21,8 +22,8 @@ export const descriptions: Record<string, string> = {
     " Stay up-to-date with our latest news and developments.",
 };
 
-// export const defaultBackground = "/assets/earth-background-image.jpg";
-export const defaultBackground = "qtp5pymylw5l7ou7xvei";
+export const defaultBackground = "/assets/earth-background-image.jpg";
+// export const defaultBackground = "qtp5pymylw5l7ou7xvei";
 export const defaultTitle = ["OUR MISSION", "SATCOM GLOBAL CONNECTIVITY"];
 
 export const defaultDescriptions = [

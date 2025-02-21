@@ -67,7 +67,7 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgr
                     <h1
                       className={`slider-title ${
                         hoveredIndex === index ? "slider-title-hovered" : ""
-                      } px-6`}
+                      } px-4`}
                     >
                       {card.title}
                     </h1>

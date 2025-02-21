@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 interface GradientTextProps {
@@ -18,7 +19,7 @@ const ContactDetailsSection: React.FC<GradientTextProps> = ({ text1, text2, link
       {text1}
     </h1>
     <h1 className="text-white uppercase text-[10px] sm:text-[12px] md:text-lg">
-      {text2} <span className="uppercase text-blue-400">{link}</span>
+      {text2} <Link href="mailto:info@usaitechcorp.com" className="uppercase text-blue-400">{link}</Link>
     </h1>
   </div>
   )
