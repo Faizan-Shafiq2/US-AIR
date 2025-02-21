@@ -21,9 +21,9 @@ const NewsPage = async ({ params }: Props) => {
   const blogpost = await blogPost(slug);
 
   return (
-    <div >
+    <div>
       <div className="max-w-[2000px] mx-auto px-4 md:px-16 py-6"> 
-      <News blogpost={blogpost} />
+        <News blogpost={blogpost} slug={slug} />
       </div>
     </div>
   );

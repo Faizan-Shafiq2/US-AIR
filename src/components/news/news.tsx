@@ -1,7 +1,7 @@
 "use client";
+import Image from "next/image";
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import PortableTextComponent from "./portable-text";
-import Image from "next/image";
 import "swiper/css/bundle";
 import { urlFor } from "@/sanity/lib/image";
 import RelatedPost from "./related-post";
@@ -27,9 +27,11 @@ interface PostProps {
     image: { _ref: string; alt?: string };
   };
   relatedPosts?: BlogPost[];
+  slug: string;
 }
 
-const News = ({ blogpost }: { blogpost: PostProps }) => {
+const News = ({ blogpost, slug}: { blogpost: PostProps; slug: string }) => {
+  // console.log("🚀 ~ News ~ slug:", slug)
   return (
     <article className="article rounded-t-3xl z-50">
       <h1 className="blog-title">{blogpost?.title}</h1>
@@ -54,14 +56,14 @@ const News = ({ blogpost }: { blogpost: PostProps }) => {
             </div>
             <div className="flex items-center justify-center gap-4">
               <h4 className="text-[#c7c7c7] text-md">Share on</h4>
-              <LinkedinShareButton url={"https://github.com/next-share"}>
+              <LinkedinShareButton url={`https://us-air-faizans-projects-c118cff1.vercel.app/news/${slug}`}>
                 <LinkedinIcon
                   size={32}
                   round={true}
                   bgStyle={{ fill: "gray" }}
                 />
               </LinkedinShareButton>
-              <FacebookShareButton url={"https://github.com/next-share"}>
+              <FacebookShareButton url={`https://us-air-faizans-projects-c118cff1.vercel.app/news/${slug}`}>
                 <FacebookIcon
                   size={32}
                   round={true}
