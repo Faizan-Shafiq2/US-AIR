@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [descriptionIndex, setDescriptionIndex] = useState(0);
   const [titleIndex, setTitleIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false); // Ensure text does not disappear initially
   const [blogTitle, setBlogTitle] = useState("");
   const [blogDescription, setBlogDescription] = useState("");
   const [blogImage, setBlogImage] = useState("");
@@ -30,6 +30,7 @@ const Header: React.FC = () => {
   const [backgroundSource, setBackgroundSource] = useState<string | undefined>(undefined);
   const [isVideo, setIsVideo] = useState(false);
   const videoPaths = ["/", "/careers"];
+  const textColor = pathname === "/" || pathname === "/careers" ? "text-black" : "text-white";
   
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -146,7 +147,7 @@ const Header: React.FC = () => {
           />
         )}
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between">
-          <div className="z-50 py-8 text-white hidden md:flex justify-center">
+          <div className={`z-50 py-8 hidden md:flex justify-center ${textColor}`}>
             <nav className="flex space-x-8 text-sm">
               {navLinks.map((link) => (
                 <Link
@@ -159,10 +160,10 @@ const Header: React.FC = () => {
               ))}
             </nav>
           </div>
-          <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-6 text-white md:hidden">
+          <div className={`absolute top-0 right-0 z-20 flex items-center justify-end p-6 md:hidden ${textColor}`}>
             <button
               onClick={toggleSidebar}
-              className="text-white focus:outline-none"
+              className={`focus:outline-none ${textColor}`}
             >
               <Image
                 src="/assets/hamburger-menu.svg"
@@ -174,9 +175,7 @@ const Header: React.FC = () => {
             </button>
           </div>
           <div
-            className={`fixed top-0 right-0 z-20 bg-black bg-opacity-90 text-white p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${
-              isSidebarOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`fixed top-0 right-0 z-20 bg-gray-800  p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} ${textColor}`}
           >
             <button onClick={toggleSidebar} className="mb-6 focus:outline-none">
               <Image
@@ -204,15 +203,14 @@ const Header: React.FC = () => {
           </div>
           <div className="absolute bottom-0 left-0 w-full flex flex-col items-start md:mb-20 mb-10">
             <div
-              className="z-10 mx-8 md:mx-20 lg:mx-32 text-white"
+              className={`z-10 mx-8 md:mx-20 lg:mx-32 ${textColor}`}
               data-aos="fade-up"
             >
-              <h1
-                className={`heading transition-all duration-1000 ease-in-out ${
+              <h1 className={`heading transition-all duration-1000 ease-in-out ${
                   isAnimating
                     ? "opacity-0 translate-y-4"
                     : "opacity-100 translate-y-0"
-                }`}
+                } ${textColor}`}
               >
                 {isTitlePresent}
               </h1>

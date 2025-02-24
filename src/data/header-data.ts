@@ -16,7 +16,7 @@ export const titles: Record<string, string> = {
 export const descriptions: Record<string, string> = {
 "/technology": "COMMERCIAL | DEFENSE",
   "/company":
-    "We seeks to promote human interconnectedness, development in all human activity ecosystems, and wellbeing through advanced satellite communications.",
+    "USAT seeks to promote human interconnectedness, development, and wellbeing through advanced wireless communication.",
   "/careers": "We are USAT",
   "/news":
     " Stay up-to-date with our latest news and developments.",
@@ -27,6 +27,6 @@ export const defaultBackground = "/assets/earth-background-image.jpg";
 export const defaultTitle = ["OUR MISSION", "SATCOM GLOBAL CONNECTIVITY"];
 
 export const defaultDescriptions = [
-  "USAT seeks to promote human interconnectedness, development in all human activity ecosystems, and wellbeing through advanced satellite communications.",
+  "USAT seeks to promote human interconnectedness, development, and wellbeing through advanced wireless communication.",
   "We bring people together",
 ];

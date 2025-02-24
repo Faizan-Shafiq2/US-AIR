@@ -29,7 +29,7 @@ const Careers = () => {
               </Link>
             </div>
             <div className="flex px-3 items-center justify-center w-16 rounded-full bg-black border-2 border-[#7f7f7f]">
-              <Link href="mailto:info@usaitechcorp.com">
+              <Link href="mailto:info@usairtechcorp.com">
               <Image
                 src={"/mail.svg"}
                 alt="US AIR TECH"
