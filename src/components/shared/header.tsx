@@ -160,17 +160,17 @@ const Header: React.FC = () => {
               ))}
             </nav>
           </div>
-          <div className={`absolute top-0 right-0 z-20 flex items-center justify-end p-6 md:hidden ${textColor}`}>
+          <div className={`absolute top-0 right-0 z-20 flex items-center justify-end p-6 md:hidden`}>
             <button
               onClick={toggleSidebar}
-              className={`focus:outline-none ${textColor}`}
+              className={`focus:outline-none`}
             >
               <Image
                 src="/assets/hamburger-menu.svg"
                 alt="Hamburger menu"
                 width={10}
                 height={10}
-                className="w-8 h-8"
+                className={`w-8 h-8`}
               />
             </button>
           </div>
@@ -203,14 +203,14 @@ const Header: React.FC = () => {
           </div>
           <div className="absolute bottom-0 left-0 w-full flex flex-col items-start md:mb-20 mb-10">
             <div
-              className={`z-10 mx-8 md:mx-20 lg:mx-32 ${textColor}`}
+              className={`z-10 mx-8 md:mx-20 lg:mx-32  text-white`}
               data-aos="fade-up"
             >
               <h1 className={`heading transition-all duration-1000 ease-in-out ${
                   isAnimating
                     ? "opacity-0 translate-y-4"
                     : "opacity-100 translate-y-0"
-                } ${textColor}`}
+                }`}
               >
                 {isTitlePresent}
               </h1>
