@@ -8,7 +8,7 @@ export const backgroundImages: Record<string, string> = {
 
 export const titles: Record<string, string> = {
   "/technology": "TECHNOLOGY",
-  "/company": "ABOUT USAT",
+  "/company": "Our Mission",
   "/careers": "CAREERS",
   "/news": "NEWS",
 };
@@ -16,7 +16,7 @@ export const titles: Record<string, string> = {
 export const descriptions: Record<string, string> = {
 "/technology": "COMMERCIAL | DEFENSE",
   "/company":
-    "USAT seeks to promote human interconnectedness, development, and wellbeing through advanced wireless communication.",
+    "USAT seeks to promote human interconnectedness, development in all human activity ecosystems, and wellbeing through advanced satellite communication .",
   "/careers": "We are USAT",
   "/news":
     " Stay up-to-date with our latest news and developments.",
