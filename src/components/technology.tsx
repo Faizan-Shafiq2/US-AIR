@@ -14,7 +14,7 @@ const Technology = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const handleTitleClick = (index: number) => {
-    setActiveIndex(index === activeIndex ? null : index);
+    setActiveIndex(index === activeIndex ? index : index);
   };
 
   return (

@@ -1,9 +1,11 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { navLinks } from "@/data/navbar";
 
 const Footer: React.FC = () => {
+ 
   return (
     <footer className="bg-black max-w-[2000px] mx-auto text-white py-8 lg:px-4">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
@@ -26,7 +28,7 @@ const Footer: React.FC = () => {
         <div className="h-auto flex flex-col items-start justify-start ">
           <h1 className="text-lg font-normal mb-4 md:mb-6">Inquire</h1>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-start gap-4 text-xs font-light">
-            <h2>520-308-5512</h2>
+            <Link href={'tel:520-308-5512'} >520-308-5512</Link>
             <p className="md:-ml-10">
               University of Arizona <br /> Science and Technology Park <br /> 9040 South
               Rita Road, Suite 1270 <br /> Tucson, AZ 85747-9192 USA
