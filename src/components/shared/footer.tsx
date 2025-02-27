@@ -32,14 +32,14 @@ const Footer: React.FC = () => {
               Rita Road, Suite 1270 <br /> Tucson, AZ 85747-9192 USA
             </p>
             <Link
-              href="mailto:info@usaitechcorp.com"
+              href="mailto:info@usairtechcorp.com"
               className="text-[#98C0FC] hover:underline"
             >
-              info@usaitechcorp.com
+              info@usairtechcorp.com
             </Link>
 
             <div>
-              <Link href="https://www.linkedin.com/company/us-air-tech/">
+              <Link href="https://www.linkedin.com/company/us-air-tech/" target="_blank">
                 <Image
                   src={"/linkedIn.svg"}
                   alt={"Image"}

@@ -19,7 +19,7 @@ const Careers = () => {
           </p>
           <div className="flex gap-3">
             <div className="w-16 rounded-full bg-black">
-            <Link href="https://www.linkedin.com/company/us-air-tech/">
+            <Link href="https://www.linkedin.com/company/us-air-tech/" target="_blank">
               <Image
                 src={"/linkedIn.svg"}
                 alt="US AIR TECH"

@@ -57,6 +57,7 @@ const Header: React.FC = () => {
       if (params.slug) {
         try {
           const post = await blogPost(params.slug as string);
+          console.log("🚀 ~ fetchBlogImage ~ post:", post)
           if (post && post.mainImage) {
             setBlogImage(post.mainImage.asset.url);
           }
