@@ -14,8 +14,8 @@ import {
   defaultDescriptions,
 } from "@/data/header-data";
 import AOS from "aos";
-import { getCldVideoUrl } from 'next-cloudinary';
-import 'next-cloudinary/dist/cld-video-player.css';
+import { getCldVideoUrl } from "next-cloudinary";
+import "next-cloudinary/dist/cld-video-player.css";
 
 const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -27,11 +27,14 @@ const Header: React.FC = () => {
   const [blogImage, setBlogImage] = useState("");
   const pathname = usePathname();
   const params = useParams();
-  const [backgroundSource, setBackgroundSource] = useState<string | undefined>(undefined);
+  const [backgroundSource, setBackgroundSource] = useState<string | undefined>(
+    undefined
+  );
   const [isVideo, setIsVideo] = useState(false);
   const videoPaths = ["/", "/careers"];
-  const textColor = pathname === "/" || pathname === "/careers" ? "text-black" : "text-white";
-  
+  const textColor =
+    pathname === "/" || pathname === "/careers" ? "text-black" : "text-white";
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
@@ -57,7 +60,7 @@ const Header: React.FC = () => {
       if (params.slug) {
         try {
           const post = await blogPost(params.slug as string);
-          console.log("🚀 ~ fetchBlogImage ~ post:", post)
+          console.log("🚀 ~ fetchBlogImage ~ post:", post);
           if (post && post.mainImage) {
             setBlogImage(post.mainImage.asset.url);
           }
@@ -126,13 +129,13 @@ const Header: React.FC = () => {
 
   return (
     <div className="max-w-[2000px] mx-auto">
-      <div className="h-[90vh] 2xl:h-[85vh] relative">
+      <div className=" relative h-[90vh] 2xl:h-[85vh]">
         {isVideo ? (
           <video
             id="background-video"
             width="100%"
             height="50%"
-            src={getCldVideoUrl({ src: backgroundSource || "", format: 'mp4' })}
+            src={getCldVideoUrl({ src: backgroundSource || "", format: "mp4" })}
             autoPlay
             loop
             muted
@@ -148,24 +151,32 @@ const Header: React.FC = () => {
           />
         )}
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between">
-          <div className={`z-50 py-8 hidden md:flex justify-center ${textColor}`}>
-            <nav className="flex space-x-8 text-sm">
+          <div
+            className={`z-50 py-2 hidden md:flex justify-center ${textColor}`}
+          >
+            <nav className="flex items-center space-x-8 text-sm">
+            <Image
+                src="/assets/logo.png"
+                alt="Logo"
+                width={20}
+                height={10}
+                className={`w-20 h-14`}
+              /> 
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`hover:text-blue-400 font-bold ${pathname === link.href ? "text-blue-400" : ""}`}
+                  className={`font-bold ${pathname === link.href ? "text-[#0787ba]" : ""}`}
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
           </div>
-          <div className={`absolute top-0 right-0 z-20 flex items-center justify-end p-6 md:hidden`}>
-            <button
-              onClick={toggleSidebar}
-              className={`focus:outline-none`}
-            >
+          <div
+            className={`absolute top-0 right-0 z-20 flex items-center justify-end p-6 md:hidden`}
+          >
+            <button onClick={toggleSidebar} className={`focus:outline-none`}>
               <Image
                 src="/assets/hamburger-menu.svg"
                 alt="Hamburger menu"
@@ -207,7 +218,8 @@ const Header: React.FC = () => {
               className={`z-10 mx-8 md:mx-20 lg:mx-32  text-white`}
               data-aos="fade-up"
             >
-              <h1 className={`heading transition-all duration-1000 ease-in-out ${
+              <h1
+                className={`heading transition-all duration-1000 ease-in-out ${
                   isAnimating
                     ? "opacity-0 translate-y-4"
                     : "opacity-100 translate-y-0"
@@ -225,11 +237,14 @@ const Header: React.FC = () => {
                 {isDescriptionPresent === "COMMERCIAL | DEFENSE"
                   ? isDescriptionPresent.split(" | ").map((word, index) => (
                       <React.Fragment key={index}>
-                        <Link href={getLinkHref(word)} className="cursor-pointer">
+                        <Link
+                          href={getLinkHref(word)}
+                          className="cursor-pointer"
+                        >
                           {word}
                         </Link>
-                        {index !== isDescriptionPresent.split(" | ").length - 1 &&
-                          " | "}
+                        {index !==
+                          isDescriptionPresent.split(" | ").length - 1 && " | "}
                       </React.Fragment>
                     ))
                   : isDescriptionPresent}

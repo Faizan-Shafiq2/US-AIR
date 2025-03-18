@@ -26,7 +26,7 @@ const Home: React.FC = () => {
       >
         <div className="flex 2xl:w-xlg lg:w-[900px] px-10 sm:px-24 md:px-32  text-white bg-opacity-20 overflow-hidden">
           <p
-            className="xs:leading-loose sm:leading-loose md:text-xl md:leading-relaxed lg:text-3xl leading-relaxed 2xl:text-4xl"
+            className="text-base xs:leading-loose sm:leading-loose md:text-xl md:leading-relaxed lg:text-3xl leading-relaxed 2xl:text-4xl"
             data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-once="true"
