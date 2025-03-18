@@ -166,7 +166,11 @@ const Header: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-bold ${pathname === link.href ? "text-[#0787ba]" : ""}`}
+                  className={`font-bold ${
+                    pathname === link.href || (pathname === "/" && link.href === "/")
+                      ? "text-[#0787ba]"
+                      : ""
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -204,7 +208,9 @@ const Header: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   className={`hover:text-blue-400 ${
-                    pathname === link.href ? "text-blue-400 font-semibold" : ""
+                    pathname === link.href || (pathname === "/" && link.href === "/")
+                      ? "text-blue-400 font-semibold"
+                      : ""
                   }`}
                   onClick={() => setIsSidebarOpen(false)}
                 >
