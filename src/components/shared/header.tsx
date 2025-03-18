@@ -130,6 +130,13 @@ const Header: React.FC = () => {
   return (
     <div className="max-w-[2000px] mx-auto">
       <div className=" relative h-[90vh] 2xl:h-[85vh]">
+        <Image
+          src="/assets/logo.png"
+          alt="Logo"
+          width={20}
+          height={10}
+          className={`absolute w-20 h-14 z-10 my-3 lg:mx-28 md:mx-20 mx-8`}
+        />
         {isVideo ? (
           <video
             id="background-video"
@@ -152,22 +159,17 @@ const Header: React.FC = () => {
         )}
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between">
           <div
-            className={`z-50 py-2 hidden md:flex justify-center ${textColor}`}
+            className={`z-50 py-8 hidden md:flex justify-center ${textColor}`}
           >
             <nav className="flex items-center space-x-8 text-sm">
-            <Image
-                src="/assets/logo.png"
-                alt="Logo"
-                width={20}
-                height={10}
-                className={`w-20 h-14`}
-              /> 
+
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`font-bold ${
-                    pathname === link.href || (pathname === "/" && link.href === "/")
+                    pathname === link.href ||
+                    (pathname === "/" && link.href === "/")
                       ? "text-[#0787ba]"
                       : ""
                   }`}
@@ -208,7 +210,8 @@ const Header: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   className={`hover:text-blue-400 ${
-                    pathname === link.href || (pathname === "/" && link.href === "/")
+                    pathname === link.href ||
+                    (pathname === "/" && link.href === "/")
                       ? "text-blue-400 font-semibold"
                       : ""
                   }`}
