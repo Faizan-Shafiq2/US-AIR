@@ -131,7 +131,7 @@ const Header: React.FC = () => {
     <div className="max-w-[2000px] mx-auto">
       <div className=" relative h-[90vh] 2xl:h-[85vh]">
         <Image
-          src="/assets/logo.png"
+          src="/assets/logo.svg"
           alt="Logo"
           width={20}
           height={10}
