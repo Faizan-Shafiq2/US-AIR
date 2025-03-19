@@ -32,8 +32,8 @@ const Header: React.FC = () => {
   );
   const [isVideo, setIsVideo] = useState(false);
   const videoPaths = ["/", "/careers"];
-  const textColor =
-    pathname === "/" || pathname === "/careers" ? "text-black" : "text-white";
+  // const textColor =
+  //   pathname === "/" || pathname === "/careers" ? "text-black" : "text-white";
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -132,7 +132,7 @@ const Header: React.FC = () => {
         <img
           src="/assets/logo.png"
           alt="Logo"
-          className={`absolute w-20 h-14 z-10 my-3 lg:mx-28 md:mx-20 mx-8`}
+          className={`absolute w-28 z-10 my-1 lg:mx-28 md:mx-20 mx-8`}
         />
         {isVideo ? (
           <video
@@ -154,11 +154,11 @@ const Header: React.FC = () => {
             }}
           />
         )}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between ">
           <div
-            className={`z-50 py-8 hidden md:flex justify-center ${textColor}`}
+            className={`z-50 py-8 hidden md:flex justify-center text-white bg-black bg-opacity-20`}
           >
-            <nav className="flex items-center space-x-8 text-sm">
+            <nav className="flex items-center space-x-8 text-sm ">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -189,7 +189,7 @@ const Header: React.FC = () => {
             </button>
           </div>
           <div
-            className={`fixed top-0 right-0 z-20 bg-gray-800  p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} ${textColor}`}
+            className={`fixed top-0 right-0 z-20 bg-gray-800  p-6 md:hidden h-full w-1/2 transition-transform duration-1000 ease-in-out ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} text-white`}
           >
             <button onClick={toggleSidebar} className="mb-6 focus:outline-none">
               <Image

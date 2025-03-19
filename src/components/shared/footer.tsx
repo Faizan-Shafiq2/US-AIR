@@ -54,14 +54,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div className="lg:mx-auto grid md:place-items-start place-items-center md:px-10">
-        
-          <p className="text-xs">
-            © 2023 USA AI TECH. All Rights Reserved
-          </p>
-        
-      </div>
     </footer>
   );
 };
