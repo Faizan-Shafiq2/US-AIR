@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [descriptionIndex, setDescriptionIndex] = useState(0);
   const [titleIndex, setTitleIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false); // Ensure text does not disappear initially
+  const [isAnimating, setIsAnimating] = useState(false);
   const [blogTitle, setBlogTitle] = useState("");
   const [blogDescription, setBlogDescription] = useState("");
   const [blogImage, setBlogImage] = useState("");
@@ -60,7 +60,6 @@ const Header: React.FC = () => {
       if (params.slug) {
         try {
           const post = await blogPost(params.slug as string);
-          console.log("🚀 ~ fetchBlogImage ~ post:", post);
           if (post && post.mainImage) {
             setBlogImage(post.mainImage.asset.url);
           }
@@ -130,11 +129,9 @@ const Header: React.FC = () => {
   return (
     <div className="max-w-[2000px] mx-auto">
       <div className=" relative h-[90vh] 2xl:h-[85vh]">
-        <Image
-          src="/assets/logo.svg"
+        <img
+          src="/assets/logo.png"
           alt="Logo"
-          width={20}
-          height={10}
           className={`absolute w-20 h-14 z-10 my-3 lg:mx-28 md:mx-20 mx-8`}
         />
         {isVideo ? (
@@ -162,7 +159,6 @@ const Header: React.FC = () => {
             className={`z-50 py-8 hidden md:flex justify-center ${textColor}`}
           >
             <nav className="flex items-center space-x-8 text-sm">
-
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -209,10 +205,10 @@ const Header: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`hover:text-blue-400 ${
+                  className={`hover:text-[#0787ba] ${
                     pathname === link.href ||
                     (pathname === "/" && link.href === "/")
-                      ? "text-blue-400 font-semibold"
+                      ? "text-[#0787ba] font-semibold"
                       : ""
                   }`}
                   onClick={() => setIsSidebarOpen(false)}
