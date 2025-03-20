@@ -156,7 +156,7 @@ const Header: React.FC = () => {
         )}
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between ">
           <div
-            className={`z-50 py-8 hidden md:flex justify-center text-white bg-black bg-opacity-20`}
+            className={`z-50 py-8 hidden md:flex justify-center text-white bg-black bg-opacity-50`}
           >
             <nav className="flex items-center space-x-8 text-sm ">
               {navLinks.map((link) => (

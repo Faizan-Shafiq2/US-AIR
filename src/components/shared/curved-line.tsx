@@ -9,7 +9,7 @@ const CurvedLine = () => {
               alt="curved line"
               width={500}
               height={200}
-              className=' md:w-[100%] w-[90%]'
+              className=' md:w-[100%] w-[80%]'
             />
     </div>
   )
