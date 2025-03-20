@@ -132,7 +132,7 @@ const Header: React.FC = () => {
         <img
           src="/assets/logo.png"
           alt="Logo"
-          className={`absolute w-28 z-10 my-1 lg:mx-28 md:mx-20 mx-8`}
+          className={`absolute w-28 z-50 my-1 lg:mx-28 md:mx-20 mx-8`}
         />
         {isVideo ? (
           <video
@@ -156,8 +156,8 @@ const Header: React.FC = () => {
         )}
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between ">
           <div
-            className={`z-50 py-8 hidden md:flex justify-center text-white bg-black bg-opacity-50`}
-          >
+            className={`z-40 py-8 hidden md:flex justify-center text-white`} 
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}          >
             <nav className="flex items-center space-x-8 text-sm ">
               {navLinks.map((link) => (
                 <Link
