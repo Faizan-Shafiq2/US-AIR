@@ -1,7 +1,6 @@
 import React from "react";
 import GradientText from "@/components/shared/gradient-text";
 import Slider from "@/components/shared/slider";
-import CurvedLine from "./shared/curved-line";
 
 export const metadata = {
   title: "US Air Tech",
