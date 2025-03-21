@@ -32,8 +32,10 @@ const Header: React.FC = () => {
   );
   const [isVideo, setIsVideo] = useState(false);
   const videoPaths = ["/", "/careers"];
-  // const textColor =
-  //   pathname === "/" || pathname === "/careers" ? "text-black" : "text-white";
+  const textColor =
+    pathname === "/" ? "text-black" : "text-white";
+  const navbarBackground =
+    pathname === "/" ? "bg-white bg-opacity-50" : "bg-black bg-opacity-50";
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -156,8 +158,8 @@ const Header: React.FC = () => {
         )}
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between ">
           <div
-            className={`z-40 py-8 hidden md:flex justify-center text-white`} 
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}          >
+            className={`z-40 py-8 hidden md:flex justify-center ${navbarBackground} ${textColor}`} 
+                  >
             <nav className="flex items-center space-x-8 text-sm ">
               {navLinks.map((link) => (
                 <Link
