@@ -14,8 +14,10 @@ interface BackgroundImageCardProps {
   backgroundImage?: string;
 }
 
-const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgroundImage }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({
+  cards,
+  backgroundImage,
+}) => {
 
   return (
     <div className="relative bg-black">
@@ -40,45 +42,13 @@ const BackgroundImageCard: React.FC<BackgroundImageCardProps> = ({ cards, backgr
         {cards.map((card, index) => (
           <SwiperSlide
             key={index}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
           >
             <div className="relative h-full flex flex-col justify-end items-start border border-white">
-              <div
-                className={`h-[180px] pt-4 slider-details ${
-                  hoveredIndex === index ? "hovered h-[190px]" : ""
-                }`}
-              >
-                <h1
-                  className={`slider-title ${
-                    hoveredIndex === index ? "hidden" : ""
-                  } px-6`}
-                >
-                  {card.title ? (
-                    card.title
-                  ) : (
-                    <span className="text-[15px] text-justify">
-                      {card.paragraph}
-                    </span>
-                  )}
-                </h1>
-                {hoveredIndex === index && card.paragraph && (
-                  <div className="h-[180px] pt-4 bg-white" data-aos-duration="800" data-aos="fade-up">
-                    <h1
-                      className={`slider-title ${
-                        hoveredIndex === index ? "slider-title-hovered" : ""
-                      } px-4`}
-                    >
-                      {card.title}
-                    </h1>
-                    <p
-                      className="slider-description px-4 text-justify"
-                      data-aos-duration="800"
-                      data-aos="fade-up"
-                      dangerouslySetInnerHTML={{ __html: card.paragraph || "" }}
-                    ></p>
-                  </div>
-                )}
+              <div className="h-[190px] flex flex-col gap-4 px-4 text-white">
+                <h1 className="text-lg">{card.title}</h1>
+                <p
+                  dangerouslySetInnerHTML={{ __html: card.paragraph || "" }}
+                ></p>
               </div>
             </div>
           </SwiperSlide>

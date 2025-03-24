@@ -51,8 +51,8 @@ const Header: React.FC = () => {
           );
           setTitleIndex((prevIndex) => (prevIndex + 1) % defaultTitle.length);
           setIsAnimating(false);
-        }, 1000);
-      }, 4000);
+        }, 2000);
+      }, 7000);
       return () => clearInterval(interval);
     }
   }, [pathname]);
@@ -224,6 +224,7 @@ const Header: React.FC = () => {
             <div
               className={`z-10 mx-8 md:mx-20 lg:mx-32  text-white`}
               data-aos="fade-up"
+              // data-aos-duration="4000"
             >
               <h1
                 className={`heading transition-all duration-1000 ease-in-out ${

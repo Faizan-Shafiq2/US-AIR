@@ -22,8 +22,8 @@ const Technology = () => {
       <div className="px-4 md:px-16 py-10 bg-white text-center">
         <HeadingContent title="OUR TECHNOLOGY" id="our-technology" />
 
-        <div className="h-[80%] flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 lg:gap-20 w-full max-w-screen-xl mx-auto">
-          <div className="flex flex-col justify-center gap-4 text-sm max-w-[400px]">
+        <div className="h-[80%] grid lg:grid-flow-col grid-flow-row justify-center items-center gap-6 md:gap-10 lg:gap-20 w-full max-w-screen-3xl mx-auto">
+          <div className="flex flex-col justify-center gap-4 text-sm max-w-[370px] mx-auto sm:pb-0 pb-20">
             {technologyContent.map((card, index) => (
               <button key={index} onClick={() => handleTitleClick(index)}>
                 <h2
@@ -34,7 +34,7 @@ const Technology = () => {
               </button>
             ))}
           </div>
-          <div className="flex flex-col items-start justify-center text-start md:text-lg text-sm h-[370px] max-w-[500px] p-4 bg-[#F9F9F9] rounded-lg">
+          <div className="flex flex-col items-start justify-center text-start xs:leading-loose sm:leading-loose md:text-xl md:leading-relaxed lg:text-2xl h-[400px] max-w-[1000px] rounded-lg">
             {technologyContent.map((card, index) => (
               <div
                 key={index}
