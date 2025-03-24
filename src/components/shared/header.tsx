@@ -51,7 +51,7 @@ const Header: React.FC = () => {
           );
           setTitleIndex((prevIndex) => (prevIndex + 1) % defaultTitle.length);
           setIsAnimating(false);
-        }, 2000);
+        }, 1000);
       }, 7000);
       return () => clearInterval(interval);
     }
